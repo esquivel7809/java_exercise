@@ -1,5 +1,5 @@
 <?php
-	require 'conexion/database.php';
+	require 'conexion/databases.php';
     $db = new Database();
     $con = $db->conectar();
 
