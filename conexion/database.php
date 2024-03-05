@@ -2,9 +2,9 @@
 class Database
 {
 
-    private $hostname = "";
-    private $database = "";
-    private $username = "";
+    private $hostname = "localhost";
+    private $database = "login";
+    private $username = "root";
     private $password = "";
     private $chasrset = "utf8";
 
