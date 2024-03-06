@@ -1,13 +1,13 @@
 <?php
 require 'conexion/database.php';
 $db = new Database();
-try {
-    $con = $db->conectar();
-} catch (PDOException $e) {
-    echo "Error de conexión: " . $e->getMessage();
-    exit;
-}
+$con = $db->conectar();
+
 ?>
+
+
+<!--  -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,101 +23,107 @@ try {
 <body>
     <main>
         <form method="POST" autocomplete="off" class="formulario" id="formulario">
-            <!-- Div para capturar el documento -->
-            <div class="formulario__label" id="grupo__usuario">
+
+
+            <!-- div para capturar el documento -->
+
+            <div class="formulario__grupo" id="grupo__usuario">
                 <label for="usuario" class="formulario__label">Documento *</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento" required>
+                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
-                    El documento tiene que ser de 7 a 11 dígitos y solo puede contener números.
-                </p>
+                    El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
             </div>
 
-            <!-- Div para capturar el nombre -->
-            <div class="formulario__label" id="grupo__nombre">
-                <label for="nombre" class="formulario__label">Nombres *</label>
+            <!-- div para capturar el nombre -->
+
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Nombres Completos *</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Nombres" required>
-                    <i class=""></i>
+                    <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
-                    El nombre tiene que ser de 12 a 40 caracteres y solo puede contener letras.
-                </p>
+                    El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
             </div>
+            <!-- Grupo: Nombre de la Madre -->
+            <div class="formulario__grupo" id="grupo__madre">
+                <label for="madre" class="formulario__label">Nombre de la Madre *</label>
+                <div class="formulario__grupo-input">
+                    <input type="text" class="formulario__input" name="madre" id="madre" placeholder="Nombre de la Madre">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El nombre de la madre debe contener entre 2 y 40 caracteres.</p>
+            </div>
+
+            <!-- Grupo: Número de Teléfono -->
+            <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Número de Teléfono *</label>
+                <div class="formulario__grupo-input">
+                    <input type="tel" class="formulario__input" name="telefono" id="telefono" placeholder="Número de Teléfono">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El número de teléfono debe ser válido.</p>
+            </div>
+
+
             <!-- Grupo: Contraseña -->
-            <div class="formulario__label-input" id="grupo_password">
+            <div class="formulario__grupo" id="grupo__password">
                 <label for="password" class="formulario__label">Contraseña *</label>
                 <div class="formulario__grupo-input">
-                    <input type="password" class="formulario__input" name="password" id="password" autocomplete="new-password" required>
+                    <input onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
-                <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 caracteres alfanuméricos.</p>
+                <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos Alfanumericos.</p>
             </div>
 
-            <!-- Grupo: Repetir Contraseña -->
-            <div class="formulario__label-input" id="grupo_password2">
+            <!-- Grupo: Contraseña 2 -->
+            <div class="formulario__grupo" id="grupo__password2">
                 <label for="password2" class="formulario__label">Repetir Contraseña *</label>
                 <div class="formulario__grupo-input">
-                    <input type="password" class="formulario__input" name="password2" id="password2" required>
+                    <input type="password" class="formulario__input" name="password2" id="password2">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
             </div>
 
-            <div class="formulario__label" id="grupo__nombre_m">
-                <label for="nombre_m" class="formulario__label">Nombres De La Madre *</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="nombre_m" id="nombre_m" placeholder="Nombres" required>
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-                <p class="formulario__input-error">
-                    El nombre tiene que ser de 12 a 40 caracteres y solo puede contener letras.
-                </p>
-            </div>
 
-            <div class="formulario__label" id="grupo__nombre_p">
-                <label for="nombre_p" class="formulario__label">Nombre del padre *</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="nombre_p" id="nombre_p" placeholder="Nombres" required>
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-                <p class="formulario__input-error">
-                    El nombre tiene que ser de 12 a 40 caracteres y solo puede contener letras.
-                </p>
-            </div>
-
-            <!-- Grupo: Correo Electrónico -->
-            <div class="formulario__label" id="grupo_correo">
+            <!-- Grupo: Correo Electronico -->
+            <div class="formulario__grupo" id="grupo__correo">
                 <label for="correo" class="formulario__label">Correo Electrónico *</label>
                 <div class="formulario__grupo-input">
-                    <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com" required>
+                    <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
-                <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
+                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
             </div>
 
-            <!-- Grupo: Tipo de Usuario -->
-            <div class="formulario__label" id="grupo_telefono">
+            <div class="formulario__grupo" id="grupo__telefono">
                 <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
                 <div class="formulario__grupo-select">
-                    <select name="id_tip_use" id="id_tip_use" class="formulario__select " required>
+                    <select name="id_tip_use" id="id_tip_use" class="formulario__select" required>
+                        <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                         <?php
+                        /*Consulta para mostrar las opciones en el select */
                         $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use = 1');
                         $statement->execute();
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                             echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
                         }
-                        ?> </select>
+                        ?>
+                    </select>
                 </div>
+
             </div>
 
+
             <!-- Grupo: Terminos y Condiciones -->
-            <div class="formulario__grupo-terminos" id="grupo_terminos">
+            <div class="formulario__grupo" id="grupo__terminos">
                 <label class="formulario__label">
-                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos" required>
-                    Acepto los Términos y Condiciones
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                    Acepto los Terminos y Condiciones
                 </label>
             </div>
 
@@ -125,16 +131,32 @@ try {
                 <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
             </div>
 
-            <p class="text-center"></p>
-            <div class="formulario__grupo-btn-enviar">
+            <p class="text-center">
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar">Enviar</button>
                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
+
+
         </form>
     </main>
     <script src="js/jquery.js"></script>
     <script src="js/formulario.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+    <!--  Javascript funcion para convertor en mayusculas y minusculas -->
+    <!-- <script src="../js/main.js"></script> -->
+    <script>
+        function mayus(e) {
+            e.value = e.value.toUpperCase();
+        }
+
+        function minus(e) {
+            e.value = e.value.toLowerCase();
+        }
+    </script>
+
 </body>
 
 </html>
