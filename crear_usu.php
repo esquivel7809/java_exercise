@@ -93,7 +93,6 @@
                 </div>
                 
             </div>  
-
             
             <!-- Grupo: Terminos y Condiciones -->
         <div class="formulario__grupo-terminos" id="grupo__terminos">
