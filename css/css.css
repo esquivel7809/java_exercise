@@ -4,7 +4,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	background: #E5E5E5;
+	background: #95ed66;
 }
 
 main {
@@ -96,7 +96,7 @@ main {
 .formulario__mensaje {
 	height: 45px;
 	line-height: 45px;
-	background: #F66060;
+	background: #15f8bb;
 	padding: 0 15px;
 	border-radius: 3px;
 	display: none;
@@ -130,7 +130,7 @@ main {
 }
 
 .formulario__btn:hover {
-	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+	box-shadow: 3px 0px 30px rgb(223, 128, 247);
 }
 
 .formulario__mensaje-exito {
@@ -150,16 +150,16 @@ main {
 }
 
 .formulario__grupo-incorrecto .formulario__label {
-	color: #bb2929;
+	color: #7a7efa;
 }
 
 .formulario__grupo-incorrecto .formulario__validacion-estado {
-	color: #bb2929;
+	color: #f186ad;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__input {
-	border: 3px solid #bb2929;
+	border: 3px solid #6f6f79;
 }
 
 
