@@ -18,17 +18,17 @@
 
 <body>
     <main>
-        <form method="POST" autocomplete="off" class="formulario" id="formulario">
+        <form method="POST" autocomplete="off" class="formulario" id="formulario" >
 
             <!-- div para capturar el documento -->
-            <div class="formulario__grupo-input" id="usuario">
+            <div class="formulario__grupo-input" id="grupo__usuario">
                 <label for="usuario" class="formulario__label">Documento *</label>
-                <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-                <p class="formulario__mensaje">
-                    El documento tiene que ser de 6 a 11 dígitos y solo puede contener números.</p>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">
+                        El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
             </div>
 
             <!-- div para capturar el nombre -->
@@ -64,7 +64,7 @@
 
             <!-- Grupo: Contraseña -->
             <div class="formulario__grupo-input">
-                <label id="password" for="password" class="formulario__label">Contraseña *</label>
+                <label id="grupo_password" for="password" class="formulario__label">Contraseña *</label>
                 <div class="formulario__grupo-input">
                     <input onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -90,35 +90,44 @@
                 <p class="formulario__mensaje">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
             </div>
 
-            <div class="formulario__grupo-input" id="grupo__telefono">
-                <label for="id_tip_use" class="formulario__grupo-select">Tipo Usuario *</label>
-                <div class="formulario__select">
-                    <select name="id_tip_use" id="id_tip_use" class="" required>
-                        <?php
-                            $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use = 1');
-                            $statement->execute();
-                            while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                                echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
-                            }
-                        ?>
-                    </select>
-                </div>
-            </div>
+                <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
+				    <div class="formulario__grupo-select">               
+                        <select  name="id_tip_use" id="id_tip_use" class="formulario__select  " required>
+                            <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
+                                <?php
+                                   /*Consulta para mostrar las opciones en el select */
+                                    $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use = 1');
+                                    $statement->execute();
+                                    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                                      echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
+                                    }
+                                ?>
+                        </select>
+                    </div>
+                    
+                </div>  
 
             <!-- Grupo: Terminos y Condiciones -->
             <div class="formulario__checkbox" id="grupo__terminos">
-                <label class="formulario__grupo-terminos">
-                    <input class="" type="checkbox" name="terminos" id="terminos">
-                    Acepto los Terminos y Condiciones
-                </label>
-            </div>
+				<label class="formulario__checkbox">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+					Acepto los Terminos y Condiciones
+				</label>
+			</div>
+
+			<div class="formulario__mensaje" id="formulario__mensaje">
+				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+			</div>
 
             <div class="formulario__mensaje" id="formulario__mensaje">
                 <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
             </div>
 
+            <p class="text-center">
+                      
             <div class="formulario__grupo-btn-enviar">
-                <button type="submit" class="formulario__btn" name="save" value="guardar">Enviar</button>
+                <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
 
