@@ -49,7 +49,7 @@
                 </div>
 
                 <!-- Grupo: Contraseña -->
-                <div class="formulario__grupo-input">
+                <div class="formulario__grupo-input"  id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
                     <div class="formulario__grupo-input">
                         <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
@@ -100,8 +100,8 @@
                 
                 <!-- Grupo: Terminos y Condiciones -->
 			<div class="formulario__checkbox" id="grupo__terminos">
-				<label class="">
-					<input class="" type="checkbox" name="terminos" id="terminos">
+				<label class="formulario__checkbox">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
 					Acepto los Terminos y Condiciones
 				</label>
 			</div>

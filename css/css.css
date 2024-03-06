@@ -4,13 +4,14 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	background: #E5E5E5;
+	background: #ffffff;
 }
 
 main {
 	max-width: 800px;
 	width: 90%;
 	margin: auto;
+	background: #b7c5c7;
 	padding: 40px;
 }
 
@@ -120,7 +121,7 @@ main {
 	height: 45px;
 	line-height: 45px;
 	width: 30%;
-	background: #000;
+	background: #ec2e2e;
 	color: #fff;
 	font-weight: bold;
 	border: none;
