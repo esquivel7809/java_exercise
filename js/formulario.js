@@ -2,8 +2,8 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
-	usuario: /^\d{7,11}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
+	usuario: /^\d{6,11}$/, 
+	nombre: /^[a-zA-ZÀ-ÿ\s]{12,40}$/, 
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 	// telefono: /^\d{7,14}$/ 
