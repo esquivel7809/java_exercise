@@ -28,7 +28,7 @@
 
                 <div class="formulario__grupo-input" id="grupo__usuario">
                     <label for="usuario" class="formulario__label">Documento *</label>
-                        <div class="">
+                        <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
@@ -40,7 +40,7 @@
 
                 <div class="formulario__grupo-input" id="grupo__nombre">
                     <label for="nombre" class="formulario__label">Nombres *</label>
-                        <div class="">
+                        <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
@@ -49,7 +49,7 @@
                 </div>
 
                 <!-- Grupo: Contraseña -->
-                <div class="formulario__grupo-input">
+                <div class="formulario__grupo-input" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
                     <div class="formulario__grupo-input">
                         <input onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
@@ -60,7 +60,7 @@
 
                 <!-- Grupo: Contraseña 2 -->
                 <div class="formulario__grupo-input" id="grupo__password2">
-                    <label for="password2" class="formulario__label">Contraseña </label>
+                    <label for="password2" class="formulario__label">Contraseña *</label>
                     <div class="formulario__grupo-input">
                         <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -79,9 +79,29 @@
                     <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
+                <div class="formulario__grupo-input" id="grupo__ciudad">
+                    <label for="ciudad" class="formulario__label">Ciudad *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="ciudad" id="ciudad" placeholder="Ciudad">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            La ciudad no coincide.</p>
+                </div>
+                
+                <div class="formulario__grupo-input" id="grupo__codigo_postal">
+                    <label for="codigo_postal" class="formulario__label">Codigo Postal *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="codigo_postal" id="codigo_postal" placeholder="Código Postal">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            La dirección no coincide.</p>
+                </div>
+
                 <div class="formulario__grupo-input" id="grupo__telefono">
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
-        <div class="">                 
+                    <div class="formulario__grupo-input">                 
                         <select name="id_tip_use" id="id_tip_use" class="formulario__select" required>
                             <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                                 <?php
@@ -94,8 +114,7 @@
                                 ?>
                         </select>
                     </div>
-                    
-                </div>  
+        </div>  
 
                 
                 <!-- Grupo: Terminos y Condiciones -->

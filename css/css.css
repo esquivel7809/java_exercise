@@ -4,7 +4,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	background: #9ac2f5;
+	background: #ffd493;
 }
 
 main {
@@ -17,7 +17,7 @@ main {
 .formulario {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	gap: 20px;
+	gap: 50px;
 }
 
 .formulario__label {
@@ -120,7 +120,7 @@ main {
 	height: 45px;
 	line-height: 45px;
 	width: 30%;
-	background: #189fd4;
+	background: #075196;
 	color: #fff;
 	font-weight: bold;
 	border: none;

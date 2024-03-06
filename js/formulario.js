@@ -5,7 +5,9 @@ const expresiones = {
 	usuario: /^\d{7,11}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	ciudad: /^[a-zA-ZÀ-ÿ\s'-]{5,10}$/,
+	codigo_postal: /^\d{7,10}$/,
 	// telefono: /^\d{7,14}$/ 
 	
 }
@@ -14,7 +16,9 @@ const campos = {
 	usuario: false,
 	nombre: false,
 	password: false,
-	correo: false
+	correo: false,
+	ciudad: false,
+	codigo_postal: false,
 	// telefono: false
 	
 }
@@ -33,9 +37,15 @@ const validarFormulario = (e) => {
 		break;
 		case "password2":
 			validarPassword2();
-		break;
+		break;	
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
+		break;
+		case "ciudad":
+			validarCampo(expresiones.ciudad, e.target, 'ciudad');
+		break;
+		case "codigo postal":
+			validarCampo(expresiones.correo, e.target, 'codigo_postal');
 		break;
 		// case "telefono":
 		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
@@ -94,13 +104,15 @@ formulario.addEventListener('submit', (e) => {
 		var nom = document.getElementById('nombre').value;
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
+		var ciudad = document.getElementById('ciudad').value;
+		var codigo_postal = document.getElementById('codigo_postal').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.password && campos.correo  && campos.ciudad && campos.codigo_postal && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(ciudad);console.log(codigo_postal);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, ciudad: ciudad, codigo_postal: codigo_postal, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
