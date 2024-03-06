@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-03-2024 a las 12:29:22
+-- Tiempo de generación: 06-03-2024 a las 17:33:17
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `login`
+-- Base de datos: `bd`
 --
 
 -- --------------------------------------------------------
@@ -124,6 +124,8 @@ INSERT INTO `transversal` (`id_transv`, `transversal`) VALUES
 CREATE TABLE `user` (
   `doc` varchar(11) NOT NULL,
   `name` varchar(40) NOT NULL,
+  `edad` int(3) NOT NULL,
+  `direccion` varchar(30) NOT NULL,
   `contrasena` varchar(600) NOT NULL,
   `email` varchar(40) NOT NULL,
   `id_tip_user` int(11) NOT NULL,
@@ -134,14 +136,14 @@ CREATE TABLE `user` (
 -- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `user` (`doc`, `name`, `contrasena`, `email`, `id_tip_user`, `estado`) VALUES
-('', '', '$2y$10$7mHmr9lIsIhQ8Z27CH3qf.g/Wqmkr8MZ6iOpsHxBXZXT13kfCj0km', '', 1, '2'),
-('1000795194', 'JUAN PABLO', '$2y$10$Y/IUKi1uFmBBuxY91O89X.wJZsYey8Vl07P5G3CHh8ilbrkR4FtvC', 'jdjdhdh@djdj.com.co', 2, '1'),
-('1007384714', 'LEIDY', '$2y$10$fyzS6GFP4WCWY5qyl9wvBeySe9Mfd0nYi/7Sfg1KRvldQ5AANYfQu', 'leidy@houu.com', 1, '2'),
-('123412341', 'Jorge Gutierrez', '12345678', 'dkjd@did.com', 3, '1'),
-('65789123', 'Maria Lozano', '87654321', 'jdkdk@hd.com', 3, '1'),
-('90909090', 'Sergio Ocampo', '12345678', 'ser@gmail.com', 3, '1'),
-('93409436', 'Cesar Esquivel', '87654321', 'esquivel7809@gmail.com', 1, '2');
+INSERT INTO `user` (`doc`, `name`, `edad`, `direccion`, `contrasena`, `email`, `id_tip_user`, `estado`) VALUES
+('', '', 0, '', '$2y$10$7mHmr9lIsIhQ8Z27CH3qf.g/Wqmkr8MZ6iOpsHxBXZXT13kfCj0km', '', 1, '2'),
+('1000795194', 'JUAN PABLO', 0, '', '$2y$10$Y/IUKi1uFmBBuxY91O89X.wJZsYey8Vl07P5G3CHh8ilbrkR4FtvC', 'jdjdhdh@djdj.com.co', 2, '1'),
+('1007384714', 'LEIDY', 0, '', '$2y$10$fyzS6GFP4WCWY5qyl9wvBeySe9Mfd0nYi/7Sfg1KRvldQ5AANYfQu', 'leidy@houu.com', 1, '2'),
+('123412341', 'Jorge Gutierrez', 0, '', '12345678', 'dkjd@did.com', 3, '1'),
+('65789123', 'Maria Lozano', 0, '', '87654321', 'jdkdk@hd.com', 3, '1'),
+('90909090', 'Sergio Ocampo', 0, '', '12345678', 'ser@gmail.com', 3, '1'),
+('93409436', 'Cesar Esquivel', 0, '', '87654321', 'esquivel7809@gmail.com', 1, '2');
 
 --
 -- Índices para tablas volcadas

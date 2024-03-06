@@ -46,6 +46,27 @@
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
+                <div class="formulario__grupo-input" id="grupo__edad">
+                    <label for="edad" class="formulario__label">Edad *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="number" class="formulario__input" name="edad" id="edad" placeholder="Edad">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            La edad tiene que ser de 1 a 3 dígitos y solo puede contener numeros.</p>
+                </div>
+
+                <div class="formulario__grupo-input" id="grupo__direccion">
+                    <label for="direccion" class="formulario__label">Direccion *</label>
+                        <div class="formulario__grupo-input">
+                        <input onkeyup="minus(this);" type="direccion" class="formulario__input" name="direccion" id="direccion" placeholder="Direccion">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                        La direccion solo puede contener letras, numeros, puntos, guiones y guion bajo..</p>
+                </div>
+
+
                 <!-- Grupo: Contraseña -->
                 <div class="formulario__grupo-input" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
