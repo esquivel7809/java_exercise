@@ -21,67 +21,67 @@
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="formulario">
+        <form  method="POST" autocomplete="off" class="formulario" id="formulario">
             
 
                 <!-- div para capturar el documento -->
 
-                <div class="" id="grupo__usuario">
-                    <label for="usuario" class="">Documento *</label>
+                <div class="formulario__grupo-input" id="grupo__usuario">
+                    <label for="usuario" class="formulario__label">Documento *</label>
                         <div class="">
-                            <input type="text" class="" name="usuario" id="usuario" placeholder="Documento">
+                            <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__input-error">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
                 <!-- div para capturar el nombre -->
 
-                <div class="" id="grupo__nombre">
-                    <label for="nombre" class="">Nombres *</label>
+                <div class="formulario__grupo-input" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombres *</label>
                         <div class="">
-                            <input type="text" class="" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
-                            <i class=""></i>
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__input-error">
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
                 <!-- Grupo: Contraseña -->
-                <div class="">
-                    <label for="password" class="">Contraseña *</label>
+                <div class="formulario__grupo-input">
+                    <label for="password" class="formulario__label">Contraseña *</label>
                     <div class="">
-                        <input  onkeyup="minus(this);" type="password" class="" name="password" id="password">
+                        <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos Alfanumericos.</p>
                 </div>
 
                 <!-- Grupo: Contraseña 2 -->
-                <div class="" id="grupo__password2">
-                    <label for="password2" class="">Repetir Contraseña *</label>
-                        <input type="password" class="" name="password2" id="password2">
+                <div class="formulario__grupo-input" id="grupo__password2">
+                    <label for="password2" class="formulario__label">Contraseña </label>
+                        <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="">Ambas contraseñas deben ser iguales.</p>
+                    <p class="formulario__input-error-activo">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
 
                 <!-- Grupo: Correo Electronico -->
-                <div class="" id="grupo__correo">
-                    <label for="correo" class="">Correo Electrónico *</label>
-                    <div class=">
+                <div class="formulario__grupo-input" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo Electrónico *</label>
+                    <div class="formulario__grupo-input">
                         <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
-                <div class="" id="grupo__telefono">
-                    <label for="id_tip_use" class="">Tipo Usuario *</label>
+                <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
 				    <div class="">                 
-                        <select  name="id_tip_use" id="id_tip_use" class="" required>
+                        <select  name="id_tip_use" id="id_tip_use" class="formulario__select" required>
                             <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                                 <?php
                                    /*Consulta para mostrar las opciones en el select */
