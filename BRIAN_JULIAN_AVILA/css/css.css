@@ -18,6 +18,7 @@ main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
+	
 }
 
 .formulario__label {
@@ -25,6 +26,7 @@ main {
 	font-weight: 700;
 	padding: 10px;
 	cursor: pointer;
+	
 }
 
 .formulario__grupo-input {
@@ -96,7 +98,7 @@ main {
 .formulario__mensaje {
 	height: 45px;
 	line-height: 45px;
-	background: #F66060;
+	background:#ff9305;
 	padding: 0 15px;
 	border-radius: 3px;
 	display: none;
@@ -135,7 +137,7 @@ main {
 
 .formulario__mensaje-exito {
 	font-size: 14px;
-	color: #119200;
+	color: #34f1ff;
 	display: none;
 }
 
@@ -145,21 +147,21 @@ main {
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
-	color: #1ed12d;
+	color: #34f1ff;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__label {
-	color: #bb2929;
+	color:#ff9305;
 }
 
 .formulario__grupo-incorrecto .formulario__validacion-estado {
-	color: #bb2929;
+	color: #ff9305;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__input {
-	border: 3px solid #bb2929;
+	border: 3px solid #ff9305;
 }
 
 
