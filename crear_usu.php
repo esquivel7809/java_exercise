@@ -92,7 +92,6 @@
                     
                 </div>  
 
-                
                 <!-- Grupo: Terminos y Condiciones -->
 			<div class="formulario__checkbox" id="grupo__terminos">
 				<label class="formulario__checkbox">
