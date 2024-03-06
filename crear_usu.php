@@ -21,13 +21,13 @@
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="formulario">
+        <form  method="POST" autocomplete="off" class="formulario" id="formulario">
             
 
                 <!-- div para capturar el documento -->
 
                 <div class="" id="grupo__usuario">
-                    <label for="usuario" class="">Documento *</label>
+                    <label for="usuario" class="formulario__label">Documento *</label>
                         <div class="">
                             <input type="text" class="" name="usuario" id="usuario" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -38,7 +38,7 @@
 
                 <!-- div para capturar el nombre -->
 
-                <div class="" id="grupo__nombre">
+                <div class="formulario__grupo-input" id="grupo__nombre">
                     <label for="nombre" class="">Nombres *</label>
                         <div class="">
                             <input type="text" class="" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
