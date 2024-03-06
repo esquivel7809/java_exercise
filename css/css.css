@@ -4,7 +4,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	background: #E5E5E5;
+	background: #cce0e7;
 }
 
 main {
@@ -135,7 +135,7 @@ main {
 
 .formulario__mensaje-exito {
 	font-size: 14px;
-	color: #119200;
+	color: #fb0896;
 	display: none;
 }
 
@@ -145,21 +145,21 @@ main {
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
-	color: #1ed12d;
+	color: #1a49f1;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__label {
-	color: #bb2929;
+	color: #000000;
 }
 
 .formulario__grupo-incorrecto .formulario__validacion-estado {
-	color: #bb2929;
+	color: #2d0520;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__input {
-	border: 3px solid #bb2929;
+	border: 3px solid #2d0520;
 }
 
 
