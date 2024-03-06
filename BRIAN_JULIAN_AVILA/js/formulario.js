@@ -2,11 +2,12 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
-	usuario: /^\d{7,11}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
-	password: /^.{8,12}$/, 
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-	// telefono: /^\d{7,14}$/ 
+	usuario: /^\d{7,11}$/,
+	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/,
+	password: /^.{8,12}$/,
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	edad: /^\d{1,3}$/,
+	verify: /^[A-Z0-9].{5,5}$/,
 	
 }
 
@@ -14,8 +15,9 @@ const campos = {
 	usuario: false,
 	nombre: false,
 	password: false,
-	correo: false
-	// telefono: false
+	correo: false,
+	edad: false,
+	verify: false,
 	
 }
 
@@ -23,29 +25,34 @@ const validarFormulario = (e) => {
 	switch (e.target.name) {
 		case "usuario":
 			validarCampo(expresiones.usuario, e.target, 'usuario');
-		break;
+			break;
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
-		break;
+			break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
 			validarPassword2();
-		break;
+			break;
 		case "password2":
 			validarPassword2();
-		break;
+			break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
-		break;
-		// case "telefono":
-		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
-		// break;
-		
+			break;
+		case "edad":
+			validarCampo(expresiones.edad, e.target, 'edad');
+			break;
+		case "verify":
+			validarVr2();
+			break;
+		case "vr2":
+			validarVr2();
+			break;
 	}
 }
 
 const validarCampo = (expresion, input, campo) => {
-	if(expresion.test(input.value)){
+	if (expresion.test(input.value)) {
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
 		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
@@ -66,7 +73,7 @@ const validarPassword2 = () => {
 	const inputPassword1 = document.getElementById('password');
 	const inputPassword2 = document.getElementById('password2');
 
-	if(inputPassword1.value !== inputPassword2.value){
+	if (inputPassword1.value !== inputPassword2.value) {
 		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
 		document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
@@ -83,6 +90,27 @@ const validarPassword2 = () => {
 	}
 }
 
+const validarVr2 = () => {
+	const inputVerify = document.getElementById('verify');
+	const inputVr2 = document.getElementById('vr2');
+
+	if (inputVerify.value === inputVr2.value) {
+		document.getElementById(`grupo__vr2`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__vr2`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__vr2 i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__vr2 i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__vr2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos['verify'] = true;
+	} else {
+		document.getElementById(`grupo__vr2`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__vr2`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__vr2 i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__vr2 i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__vr2 .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos['verify'] = false;
+	}
+}
+
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
@@ -90,21 +118,26 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
-		var doc = document.getElementById('usuario').value;
-		var nom = document.getElementById('nombre').value;
-		var pas = document.getElementById('password').value;
-		var email = document.getElementById('correo').value;
-		var tip_usu = document.getElementById('id_tip_use').value;
+	var doc = document.getElementById('usuario').value;
+	var nom = document.getElementById('nombre').value;
+	var pas = document.getElementById('password').value;
+	var email = document.getElementById('correo').value;
+	var tip_usu = document.getElementById('id_tip_use').value;
+	var edad = document.getElementById('edad').value;
+
+
+
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if (campos.usuario && campos.nombre && campos.password && campos.correo && campos.edad && terminos.checked) {
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
-		
+		console.log(doc); console.log(nom); console.log(pas); console.log(email); console.log(tip_usu); console.log(edad);
+		$.post("registro.php?cod=datos", { doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu, edad: edad, }, function (document) {
+			$("#mensaje").html(document);
+
 		}),
-		
-		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+
+			document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
 		setTimeout(() => {
 			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
 		}, 5000);
@@ -112,5 +145,6 @@ formulario.addEventListener('submit', (e) => {
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
 		});
-	} 
+	}
 });
+

@@ -30,7 +30,7 @@ $con = $db->conectar();
             <div class="formulario__label" id="grupo__usuario">
                 <label for="usuario" class="formulario__label">Documento *</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
+                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento" require>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
@@ -70,6 +70,17 @@ $con = $db->conectar();
                 </div>
                 <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
             </div>
+            <!-- Grupo: edad -->
+            <div class="formulario__label" id="grupo__edad">
+                <label for="edad" class="formulario__label">Ingrese su edad *</label>
+                <div class="formulario__grupo-input" id="grupo__edad">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    <input type="" class="formulario__input" name="edad" id="edad" placeholder="INGRESE_EDAD">
+
+                </div>
+                <p class="formulario__input-error">La edad solo puede tener maximo 3 digitos y solo valores numericos.</p>
+            </div>
+
 
 
 
@@ -104,13 +115,32 @@ $con = $db->conectar();
 
 
             <!-- Grupo: Terminos y Condiciones -->
+
+            <div class="capchat">
+                <div class="formulario__label" id="grupo__verify">
+                    <label for="verify" class="formulario__label">CAPTCHA</label>
+                    <div class="formulario__grupo-input" id="grupo__verify">
+                        <input type="text" class="formulario__input" name="verify" id="verify" readonly onpaste="return false;" oncopy="return false;">
+                        <button   onclick="generarcapchat()" class="formulario__btn" >CAPCHAT</button>
+                    </div>
+                </div>
+
+                <div class="formulario__label" id="grupo__vr2">
+                    <label for="vr2" class="formulario__label">Ingrese el capchat *</label>
+                    <div class="formulario__grupo-input" id="grupo__vr2">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        <input type="" class="formulario__input" name="vr2" id="vr2" placeholder="INGRESE_LOS_DIGITOS_DEL_CAPCHAT" required onpaste="return false;" oncopy="return false;">
+
+                    </div>
+                    <p class="formulario__input-error">La información ingresada no coincide con el capchat.</p>
+                </div>
+            </div>
             <div class="formulario__grupo-terminos" id="grupo__terminos">
                 <label class="formulario__label">
                     <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
                     Acepto los Terminos y Condiciones
                 </label>
             </div>
-
             <div class="formulario__mensaje" id="formulario__mensaje">
                 <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
             </div>
@@ -118,7 +148,7 @@ $con = $db->conectar();
             <p class="text-center">
 
             <div class="formulario__grupo-btn-enviar">
-                <button type="submit" class="formulario__btn" name="save" value="guardar">Enviar</button>
+                <button type="submit" class="formulario__btn" name="save" id="boton_enviar" value="guardar">Enviar</button>
                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
 
@@ -139,6 +169,27 @@ $con = $db->conectar();
         function minus(e) {
             e.value = e.value.toLowerCase();
         }
+
+
+        function generarcapchat() {
+            var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+
+            var longitud = 5;
+
+            var captcha = '';
+
+
+
+            for (var i = 0; i < longitud; i++) {
+                var indice = Math.floor(Math.random() * caracteres.length);
+                captcha += caracteres.charAt(indice);
+            }
+
+
+            document.getElementById('verify').value = captcha;
+        }
+    </script>
     </script>
 
 </body>
