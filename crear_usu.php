@@ -26,8 +26,8 @@
 
                 <!-- div para capturar el documento -->
 
-                <div class="formulario__grupo" id="grupo__usuario">
-                    <label for="usuario" class="formulario__label">cedula *</label>
+                <div class="formulario__grupo-input" id="grupo__usuario">
+                    <label for="usuario" class="formulario__label">Documento *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -38,8 +38,8 @@
 
                 <!-- div para capturar el nombre -->
 
-                <div class="formulario__grupo" id="grupo__nombre">
-                    <label for="nombre" class="formulario__label">Nombres Completos *</label>
+                <div class="formulario__grupo-input" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombres *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -47,9 +47,10 @@
                         <p class="formulario__input-error">
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
+                
 
                 <!-- Grupo: Contraseña -->
-                <div class="formulario__grupo" id="grupo__password">
+                <div class="formulario__grupo-input"  id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
                     <div class="formulario__grupo-input">
                         <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
@@ -59,7 +60,7 @@
                 </div>
 
                 <!-- Grupo: Contraseña 2 -->
-                <div class="formulario__grupo" id="grupo__password2">
+                <div class="formulario__grupo-input" id="grupo__password2">
                     <label for="password2" class="formulario__label">Repetir Contraseña *</label>
                     <div class="formulario__grupo-input">
                         <input type="password" class="formulario__input" name="password2" id="password2">
@@ -69,8 +70,28 @@
                 </div>
         
 
+                <!-- Grupo: pin -->
+                <div class="formulario__grupo-input"  id="grupo__pin">
+                    <label for="pin" class="formulario__label">Pin *</label>
+                    <div class="formulario__grupo-input">
+                        <input  onkeyup="minus(this);" type="password" class="formulario__input" name="pin" id="pin">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El pin tiene que ser de 6 a 8 dígitos Alfanumericos.</p>
+                </div>
+
+                <!-- Grupo: telefono -->
+                <div class="formulario__grupo-input"  id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono *</label>
+                    <div class="formulario__grupo-input">
+                        <input  onkeyup="minus(this);" type="number" class="formulario__input" name="telefono" id="telefono" placeholder="Telefono">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El telefono tiene que ser de 10 a 12 dígitos Alfanumericos.</p>
+                </div>
+
                 <!-- Grupo: Correo Electronico -->
-                <div class="formulario__grupo" id="grupo__correo">
+                <div class="formulario__grupo-input" id="grupo__correo">
                     <label for="correo" class="formulario__label">Correo Electrónico *</label>
                     <div class="formulario__grupo-input">
                         <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
@@ -79,10 +100,10 @@
                     <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
-                <div class="formulario__grupo" id="grupo__telefono">
+                <div class="formulario__grupo-input" id="grupo__telefono">
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
-				    <div class="formulario__grupo-select">                 
-                        <select  name="id_tip_use" id="id_tip_use" class="formulario__select" required>
+				    <div class="formulario__grupo-select">               
+                        <select  name="id_tip_use" id="id_tip_use" class="formulario__select  " required>
                             <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                                 <?php
                                    /*Consulta para mostrar las opciones en el select */
@@ -99,8 +120,8 @@
 
                 
                 <!-- Grupo: Terminos y Condiciones -->
-			<div class="formulario__grupo" id="grupo__terminos">
-				<label class="formulario__label">
+			<div class="formulario__checkbox" id="grupo__terminos">
+				<label class="formulario__checkbox">
 					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
 					Acepto los Terminos y Condiciones
 				</label>
@@ -112,9 +133,9 @@
             
             <p class="text-center">
                       
-            <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
                 
         
