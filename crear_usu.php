@@ -48,6 +48,18 @@
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
+                <!-- div para capturar el telefono -->
+
+                <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="Telefono">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El numero tiene que ser de 10 dígitos y solo puede contener numeros.</p>
+                </div>
+
                 <!-- Grupo: Contraseña -->
                 <div class="formulario__grupo-input" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
