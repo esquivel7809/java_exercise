@@ -47,6 +47,7 @@
                         <p class="formulario__input-error">
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
+                
 
                 <!-- Grupo: Contraseña -->
                 <div class="formulario__grupo-input"  id="grupo__password">
@@ -68,6 +69,26 @@
                     <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
+
+                <!-- Grupo: pin -->
+                <div class="formulario__grupo-input"  id="grupo__pin">
+                    <label for="pin" class="formulario__label">Pin *</label>
+                    <div class="formulario__grupo-input">
+                        <input  onkeyup="minus(this);" type="password" class="formulario__input" name="pin" id="pin">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El pin tiene que ser de 6 a 8 dígitos Alfanumericos.</p>
+                </div>
+
+                <!-- Grupo: telefono -->
+                <div class="formulario__grupo-input"  id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono *</label>
+                    <div class="formulario__grupo-input">
+                        <input  onkeyup="minus(this);" type="number" class="formulario__input" name="telefono" id="telefono" placeholder="Telefono">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El telefono tiene que ser de 10 a 12 dígitos Alfanumericos.</p>
+                </div>
 
                 <!-- Grupo: Correo Electronico -->
                 <div class="formulario__grupo-input" id="grupo__correo">

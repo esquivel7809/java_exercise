@@ -5,6 +5,8 @@ const expresiones = {
 	usuario: /^\d{7,11}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
+	pin: /^.{6,8}$/,
+	telefono: /^.{10,12}$/,
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 	// telefono: /^\d{7,14}$/ 
 	
@@ -14,6 +16,8 @@ const campos = {
 	usuario: false,
 	nombre: false,
 	password: false,
+	pin: false,
+	telefono: false,
 	correo: false
 	// telefono: false
 	
@@ -33,6 +37,12 @@ const validarFormulario = (e) => {
 		break;
 		case "password2":
 			validarPassword2();
+		break;
+		case "pin":
+			validarCampo(expresiones.pin, e.target, 'pin');
+		break;
+		case "telefono":
+			validarCampo(expresiones.telefono, e.target, 'telefono');
 		break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
@@ -93,14 +103,16 @@ formulario.addEventListener('submit', (e) => {
 		var doc = document.getElementById('usuario').value;
 		var nom = document.getElementById('nombre').value;
 		var pas = document.getElementById('password').value;
+		var pin = document.getElementById('pin').value;
+		var tel = document.getElementById('telefono').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.password && campos.pin && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(pas);console.log(pin);console.log(tel);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, pin: pin, telefono: tel, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
