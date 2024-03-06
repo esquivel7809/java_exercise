@@ -79,19 +79,18 @@
                     <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
-                <div class="formulario__grupo-input" id="grupo__telefono">
-                    <label for="telefono" class="formulario__label">telefono *</label>
-                        <div class="telefono">
-                            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="telefono">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                        <p class="formulario__input-error">
-                            solo numeros (10).</p>
+                <div class="formulario__grupo-input"  id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono *</label>
+                    <div class="formulario__grupo-input">
+                        <input  onkeyup="minus(this);" type="number" class="formulario__input" name="telefono" id="telefono" placeholder="Telefono">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El telefono tiene que ser de 10 a 12 dígitos Alfanumericos.</p>
                 </div>
                
                 <div class="formulario__grupo-input" id="grupo__direccion">
                     <label for="direccion" class="formulario__label">direccion *</label>
-                        <div class="direccion">
+                        <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="direccion">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
