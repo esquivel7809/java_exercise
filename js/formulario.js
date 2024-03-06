@@ -37,9 +37,9 @@ const validarFormulario = (e) => {
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
 		break;
-		case "telefono":
-		validarCampo(expresiones.telefono, e.target, 'telefono');
-		break;
+		// case "telefono":
+		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
+		// break;
 		
 	}
 }

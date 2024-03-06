@@ -21,7 +21,7 @@
         <form method="POST" autocomplete="off" class="formulario" id="formulario" >
 
             <!-- div para capturar el documento -->
-            <div class="formulario__grupo-input" id="grupo__usuario">
+            <div class="formulario__grupo-input" id="usuario">
                 <label for="usuario" class="formulario__label">Documento *</label>
                     <div class="formulario__grupo-input">
                         <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
@@ -43,9 +43,9 @@
             </div>
 
             <div class="formulario__grupo-input" id="nombre">
-                <label for="apellido" class="formulario__label">Apellidos *</label>
+                <label for="nombre" class="formulario__label">Apellidos *</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" onkeyup="mayus(this);" name="apellido" id="apellido" placeholder="Apellidos">
+                    <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Apellidos">
                     <i class=""></i>
                 </div>
                 <p class="formulario__mensaje">
