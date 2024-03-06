@@ -51,7 +51,7 @@
                 <!-- Grupo: Contraseña -->
                 <div class="formulario__grupo-input">
                     <label for="password" class="formulario__label">Contraseña *</label>
-                    <div class="">
+                    <div class="formulario__grupo-input">
                         <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
@@ -61,10 +61,11 @@
                 <!-- Grupo: Contraseña 2 -->
                 <div class="formulario__grupo-input" id="grupo__password2">
                     <label for="password2" class="formulario__label">Contraseña </label>
+                    <div class="formulario__grupo-input">
                         <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error-activo">Ambas contraseñas deben ser iguales.</p>
+                    <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
 
@@ -98,22 +99,22 @@
 
                 
                 <!-- Grupo: Terminos y Condiciones -->
-			<div class="" id="grupo__terminos">
-				<label class="">
-					<input class="" type="checkbox" name="terminos" id="terminos">
+			<div class="formulario__checkbox" id="grupo__terminos">
+				<label class="formulario__checkbox">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
 					Acepto los Terminos y Condiciones
 				</label>
 			</div>
 
-			<div class="" id="formulario__mensaje">
+			<div class="formulario__mensaje" id="formulario__mensaje">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
             <p class="text-center">
                       
-            <div class="">
-                <button type="submit" class="" name="save" value="guardar" >Enviar</button>
-                <p class="" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            <div class="formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
+                <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
                 
         
