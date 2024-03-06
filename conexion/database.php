@@ -5,7 +5,7 @@ class Database
     private $hostname = "localhost";
     private $database = "bd";
     private $username = "root";
-    private $password = "123456";
+    private $password = "";
     private $chasrset = "utf8";
 
     function conectar()
