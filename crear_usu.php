@@ -60,7 +60,7 @@
 
                 <!-- Grupo: Contraseña 2 -->
                 <div class="formulario__grupo-input" id="grupo__password2">
-                    <label for="password2" class="formulario__label">Contraseña </label>
+                    <label for="password" class="formulario__label">Contraseña </label>
                     <div class="formulario__grupo-input">
                         <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
