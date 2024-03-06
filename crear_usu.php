@@ -7,7 +7,6 @@
 
 
 <!--  -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +22,6 @@
    <main>
    <form  method="POST" autocomplete="off" class="formulario" id="formulario">
             
-
             <!-- div para capturar el documento -->
 
             <div class="contenedores" id="grupo__usuario">
@@ -38,7 +36,7 @@
 
             <!-- div para capturar el nombre -->
 
-            <div class="contenedores" id="grupo__nombre">
+            <div class="formulario__grupo" id="grupo__nombre">
                 <label for="nombre" class="formulario__label">Nombres *</label>
                     <div class="">
                         <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
@@ -49,7 +47,7 @@
             </div>
 
             <!-- Grupo: Contraseña -->
-            <div class="contenedores">
+            <div class="formulario__grupo">
                 <label for="password" class="formulario__label">Contraseña *</label>
                 <div class="">
                     <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
@@ -59,7 +57,7 @@
             </div>
 
             <!-- Grupo: Contraseña 2 -->
-            <div class="contenedores" id="grupo__password2">
+            <div class="formulario__grupo" id="grupo__password2">
                 <label for="password2" class="formulario__label">Repetir Contraseña *</label>
                     <input type="password" class="formulario__input" name="password2" id="password2">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -69,7 +67,7 @@
     
 
             <!-- Grupo: Correo Electronico -->
-            <div class="contenedores" id="grupo__correo">
+            <div class="formulario__grupo" id="grupo__correo">
                 <label for="correo" class="formulario__label">Correo Electrónico *</label>
                 <div class=""">
                     <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
@@ -78,7 +76,7 @@
                 <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
             </div>
 
-            <div class="" id="grupo__telefono">
+            <div class="formulario__grupo-select" id="grupo__telefono">
                 <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
                 <div class="">                 
                     <select  name="id_tip_use" id="id_tip_use" class="formulario__select" required>
@@ -98,7 +96,7 @@
 
             
             <!-- Grupo: Terminos y Condiciones -->
-        <div class="" id="grupo__terminos">
+        <div class="formulario__grupo-terminos" id="grupo__terminos">
             <label class="formulario__label">
                 <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
                 Acepto los Terminos y Condiciones
@@ -111,8 +109,8 @@
         
         <p class="text-center">
                   
-        <div class="">
-            <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
+        <div class="formulario__grupo-btn-enviar">
+            <button type="submit" class="formulario__btn" name="save" value="guardar">Enviar</button>
             <p class="formulario__validacion-estado" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
         </div>
             
