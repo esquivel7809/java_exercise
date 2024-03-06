@@ -21,7 +21,7 @@
         <form method="POST" autocomplete="off" class="formulario" id="formulario">
 
             <!-- div para capturar el documento -->
-            <div class="formulario__grupo-input" id="grupo__usuario">
+            <div class="formulario__grupo-input" id="usuario">
                 <label for="usuario" class="formulario__label">Documento *</label>
                 <div class="formulario__grupo-input">
                     <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
@@ -32,7 +32,7 @@
             </div>
 
             <!-- div para capturar el nombre -->
-            <div class="formulario__grupo-input" id="grupo__nombre">
+            <div class="formulario__grupo-input" id="nombre">
                 <label for="nombre" class="formulario__label">Nombres *</label>
                 <div class="formulario__grupo-input">
                     <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
@@ -42,7 +42,7 @@
                     El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
             </div>
 
-            <div class="formulario__grupo-input" id="grupo__nombre">
+            <div class="formulario__grupo-input" id="nombre">
                 <label for="apellido" class="formulario__label">Apellidos *</label>
                 <div class="formulario__grupo-input">
                     <input type="text" class="formulario__input" onkeyup="mayus(this);" name="apellido" id="apellido" placeholder="Apellidos">
@@ -64,7 +64,7 @@
 
             <!-- Grupo: Contraseña -->
             <div class="formulario__grupo-input">
-                <label for="password" class="formulario__label">Contraseña *</label>
+                <label id="password" for="password" class="formulario__label">Contraseña *</label>
                 <div class="formulario__grupo-input">
                     <input onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
