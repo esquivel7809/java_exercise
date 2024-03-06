@@ -49,7 +49,7 @@
                 </div>
 
                 <!-- Grupo: Contraseña -->
-                <div class="">
+                <div class="" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
                     <div class="formulario__grupo-input">
                         <input onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
