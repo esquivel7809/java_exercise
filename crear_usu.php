@@ -71,7 +71,7 @@
 
                 <!-- Grupo: Correo Electronico -->
                 <div class="formulario__grupo-input" id="grupo__correo">
-                    <label for="correo" class="formulario__label">Correo Electrónico</label>
+                    <label for="correo" class="formulario__label">Correo Electrónico </label>
                     <div class="formulario__grupo-input">
                         <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -79,8 +79,29 @@
                     <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
+                <!-- Grupo: descripcion -->
+                <div class="formulario__grupo-input" id="grupo__descripcion">
+                    <label for="descripcion" class="formulario__label">descripcion </label>
+                    <div class="formulario__grupo-input">
+                        <input onkeyup="minus(this);" type="text" class="formulario__input" name="descripcion" id="descripcion" placeholder="descripcion">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">la descripcion solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                </div>
+
+                 <!-- Grupo:ciudad  -->
+                 <div class="formulario__grupo-input" id="grupo__ciudad">
+                    <label for="ciudad" class="formulario__label">ciudad de origen </label>
+                    <div class="formulario__grupo-input">
+                        <input onkeyup="minus(this);" type="text" class="formulario__input" name="ciudad" id="ciudad" placeholder="ciudad">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">la ciudad solo puede contener letras.</p>
+                </div>
+
+
                 <div class="formulario__grupo-input" id="grupo__telefono">
-                    <label for="id_tip_use" class="formulario__label">Tipo Usuario</label>
+                    <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
         <div class="">                 
                         <select name="id_tip_use" id="id_tip_use" class="formulario__select" required>
                             <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
