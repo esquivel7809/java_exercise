@@ -35,6 +35,18 @@
                         <p class="formulario__input-error">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
+
+                                <!-- div para capturar el telefono -->
+
+                                <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="telefono">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                </div>
               
 
                 <!-- div para capturar el nombre -->
