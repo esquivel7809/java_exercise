@@ -3,10 +3,10 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
 	usuario: /^\d{7,11}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
+	nombre: /^[a-zA-ZÀ-ÿ\s]{3,15}$/,
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	//telefono: /^\d{10,12}$/ 
+	// telefono: /^\d{7,14}$/ 
 	
 }
 
@@ -15,7 +15,7 @@ const campos = {
 	nombre: false,
 	password: false,
 	correo: false,
-	//telefono: false
+	// telefono: false
 	
 }
 
@@ -37,6 +37,9 @@ const validarFormulario = (e) => {
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
 		break;
+		// case "telefono":
+		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
+		// break;
 		
 	}
 }
@@ -95,11 +98,10 @@ formulario.addEventListener('submit', (e) => {
 		var genero = document.getElementById('id_genero').value;
 		var ciudad = document.getElementById('id_ciudad').value;
 
-
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.password && campos.correo && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);console.log(genero);console.log(ciudad);
+		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);console.log(genero);console.log(ciudad);;
 		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu, genero:genero, ciudad:ciudad}, function(document){$("#mensaje").html(document);
 		
 		}),
@@ -114,3 +116,6 @@ formulario.addEventListener('submit', (e) => {
 		});
 	} 
 });
+
+
+
