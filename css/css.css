@@ -4,7 +4,7 @@
 
 body {
 	font-family: 'Roboto', sans-serif;
-	background: #E5E5E5;
+	background: #a9e4c3;
 }
 
 main {
@@ -150,16 +150,16 @@ main {
 }
 
 .formulario__grupo-incorrecto .formulario__label {
-	color: #eeff00;
+	color: #00720a;
 }
 
 .formulario__grupo-incorrecto .formulario__validacion-estado {
-	color: #eeff00;
+	color: #00720a;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__input {
-	border: 3px solid #eeff00;
+	border: 3px solid #00720a;
 }
 
 

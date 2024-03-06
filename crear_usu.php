@@ -24,7 +24,7 @@
         <form class="formulario" method="POST" autocomplete="off" id="formulario">
                 <!-- div para capturar el documento -->
 
-                <div class="formulario__grupo-input" id="grupo__usuario">
+                <div class="formulario__grupo" id="grupo__usuario">
                     <label for="usuario" class="formulario__label">Documento *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
@@ -36,20 +36,20 @@
 
                 <!-- div para capturar el nombre -->
 
-                <div class="formulario__grupo-input" id="grupo__nombre">
+                <div class="formulario__grupo" id="grupo__nombre">
                     <label for="nombre" class="formulario__label">Nombres *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
                 <!-- Grupo: Contraseña -->
-                <div class="formulario__grupo-input">
+                <div class="formulario__grupo" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
-                    <div class="">
+                    <div class="formulario__grupo-input">
                         <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
@@ -57,19 +57,21 @@
                 </div>
 
                 <!-- Grupo: Contraseña 2 -->
-                <div class="formulario__grupo-input" id="grupo__password2">
+                <div class="formulario__grupo" id="grupo__password2">
                     <label for="password2" class="formulario__label">Repetir Contraseña *</label>
+                    <div class="formulario__grupo-input" >
                         <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                     </div>
-                    <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
 
                 <!-- Grupo: Correo Electronico -->
-                <div class="formulario__grupo-input" id="grupo__correo">
+                <div class="" id="grupo__correo">
                     <label for="correo" class="formulario__label">Correo Electrónico *</label>
-                    <div class="">
+                    <div class="formulario__grupo-input">
                         <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
@@ -80,7 +82,7 @@
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
 				<div id="formulario__grupo-select">                 
                         <select  name="id_tip_use" id="id_tip_use" class="formulario__select" required>
-                            <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
+                            <option value="" selected="">Seleccione Tipo Usuario</option>
                                 <?php
                                    /*Consulta para mostrar las opciones en el select */
                                     $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use = 1');
@@ -111,7 +113,7 @@
 
             <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
                 
         

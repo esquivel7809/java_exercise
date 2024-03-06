@@ -3,9 +3,11 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
 	usuario: /^\d{7,11}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
+	nombre: /^[a-zA-ZÀ-ÿ\s]{3,15}$/,
+	apellido: /^[a-zA-ZÀ-ÿ\s]{3,15}$/,
 	password: /^.{8,12}$/, 
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	direccion: /^[a-zA-Z0-9_.+-]+$/
 	// telefono: /^\d{7,14}$/ 
 	
 }
@@ -13,8 +15,10 @@ const expresiones = {
 const campos = {
 	usuario: false,
 	nombre: false,
+	apellido: false,
 	password: false,
-	correo: false
+	correo: false,
+	direccion: false
 	// telefono: false
 	
 }
