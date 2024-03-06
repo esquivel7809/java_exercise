@@ -22,7 +22,6 @@
 <body>
    <main>
         <form  method="POST" autocomplete="off" class="formulario" id="formulario">
-            
 
                 <!-- div para capturar el documento -->
 
@@ -39,14 +38,40 @@
                 <!-- div para capturar el nombre -->
 
                 <div class="" id="grupo__nombre">
-                    <label for="nombre" class="formulario__label">Nombres *</label>
+                    <label for="nombre" class="formulario__label">Nombre *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
+                            Los nombres del usuario tienen que ser de 10 a 30 dígitos y solo puede contener letras</p>
                 </div>
+
+                <!----------------------------------------------- Inicio Campos nuevos ----------------------------------------------->
+
+                <!-- div para capturar el apellido -->
+                <div class="" id="grupo__apellido">
+                    <label for="apellido" class="formulario__label">Apellido *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="apellido" id="apellido" placeholder="Apellidos">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            Los apellidos del usuario tienen que ser de 10 a 30 dígitos y solo puede contener letras.</p>
+                </div>
+
+                <!-- div para capturar el Pin -->
+                <div class="" id="grupo__pin">
+                    <label for="pin" class="formulario__label">Pin *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="password" class="formulario__input" name="pin" id="pin" placeholder="Pin">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El pin tiene que ser de 5 a 8 dígitos y solo puede contener numeros.</p>
+                </div>
+
+                <!----------------------------------------------- Fin Campos nuevos ----------------------------------------------->
 
                 <!-- Grupo: Contraseña -->
                 <div class="" id="grupo__password">
