@@ -21,74 +21,72 @@
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="" id="formulario">
-            
-
+        <form class="formulario" method="POST" autocomplete="off" id="formulario">
                 <!-- div para capturar el documento -->
 
-                <div class="" id="grupo__usuario">
-                    <label for="usuario" class="">Documento *</label>
-                        <div class="">
-                            <input type="text" class="" name="usuario" id="usuario" placeholder="Documento">
+                <div class="formulario__grupo-input" id="grupo__usuario">
+                    <label for="usuario" class="formulario__label">Documento *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__input-error">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
                 <!-- div para capturar el nombre -->
 
-                <div class="" id="grupo__nombre">
-                    <label for="nombre" class="">Nombres *</label>
-                        <div class="">
-                            <input type="text" class="" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
-                            <i class=""></i>
+                <div class="formulario__grupo-input" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombres *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="">
+                        <p class="formulario__input-error">
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
                 <!-- Grupo: Contraseña -->
-                <div class="">
-                    <label for="password" class="">Contraseña *</label>
+                <div class="formulario__grupo-input">
+                    <label for="password" class="formulario__label">Contraseña *</label>
                     <div class="">
-                        <input  onkeyup="minus(this);" type="password" class="" name="password" id="password">
+                        <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos Alfanumericos.</p>
                 </div>
 
                 <!-- Grupo: Contraseña 2 -->
-                <div class="" id="grupo__password2">
-                    <label for="password2" class="">Repetir Contraseña *</label>
-                        <input type="password" class="" name="password2" id="password2">
+                <div class="formulario__grupo-input" id="grupo__password2">
+                    <label for="password2" class="formulario__label">Repetir Contraseña *</label>
+                        <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="">Ambas contraseñas deben ser iguales.</p>
+                    <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
 
                 <!-- Grupo: Correo Electronico -->
-                <div class="" id="grupo__correo">
-                    <label for="correo" class="">Correo Electrónico *</label>
-                    <div class=">
+                <div class="formulario__grupo-input" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo Electrónico *</label>
+                    <div class="">
                         <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
-                <div class="" id="grupo__telefono">
-                    <label for="id_tip_use" class="">Tipo Usuario *</label>
-				    <div class="">                 
-                        <select  name="id_tip_use" id="id_tip_use" class="" required>
+                <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
+				<div id="formulario__grupo-select">                 
+                        <select  name="id_tip_use" id="id_tip_use" class="formulario__select" required>
                             <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                                 <?php
                                    /*Consulta para mostrar las opciones en el select */
                                     $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use = 1');
                                     $statement->execute();
                                     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                                      echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
+                                    echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
                                     }
                                 ?>
                         </select>
@@ -98,21 +96,21 @@
 
                 
                 <!-- Grupo: Terminos y Condiciones -->
-			<div class="" id="grupo__terminos">
-				<label class="">
-					<input class="" type="checkbox" name="terminos" id="terminos">
+			<div class="formulario__grupo-terminos" id="grupo__terminos">
+				<label class="formulario__label">
+					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
 					Acepto los Terminos y Condiciones
 				</label>
 			</div>
 
-			<div class="" id="formulario__mensaje">
+			<div class="formulario__mensaje" id="formulario__mensaje">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
             <p class="text-center">
-                      
-            <div class="">
-                <button type="submit" class="" name="save" value="guardar" >Enviar</button>
+
+            <div class="formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
                 <p class="" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
                 
