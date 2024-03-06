@@ -40,7 +40,7 @@
 
                 <div class="formulario__grupo-input" id="grupo__nombre">
                     <label for="nombre" class="formulario__label">Nombres *</label>
-                        <div class="">
+                        <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
@@ -49,7 +49,7 @@
                 </div>
 
                 <!-- Grupo: Contraseña -->
-                <div class="formulario__grupo-input">
+                <div class="formulario_grupo" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
                     <div class="formulario__grupo-input">
                         <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
@@ -61,30 +61,34 @@
                 <!-- Grupo: Contraseña 2 -->
                 <div class="formulario__grupo-input" id="grupo__password2">
                     <label for="password2" class="formulario__label">Repetir Contraseña *</label>
+                    <div class="formulario__grupo-input">
                         <input type="password" class="formulario__input " name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-                </div>
-        
-                <div class="formulario__grupo-input" id="grupo__nombre">
-                    <label for="nombre" class="formulario__label">Dirección *</label>
-                        <div class="">
-                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                        <p class="formulario__input-error">
-                            El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
-                </div>
-                
-                <div class="formulario__grupo-input" id="grupo__usuario">
-                    <label for="usuario" class="formulario__label">Telefono fijo *</label>
+               </div>
+
+
+               <!--div para agregar los dos campos correspondientes-->
+
+               <div class="formulario__grupo-input" id="grupo__nombre_acu">
+                    <label for="nombre_acu" class="formulario__label">Nombre de acudiente *</label>
                         <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre_acu" id="nombre_acu" placeholder="Nombres">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                            El usuario tiene que ser de 12 a 30 y solo puede contener letras</p>
+                </div>
+
+               <div class="formulario__grupo-input" id="grupo__tel_cel">
+                    <label for="tel_cel" class="formulario__label">Telefono *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="tel_cel" id="tel_cel" placeholder="Telefono celular">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El documento tiene que ser de 10 y solo puede contener numeros.</p>
                 </div>
 
                 <!-- Grupo: Correo Electronico -->
@@ -117,7 +121,7 @@
 
                 
                 <!-- Grupo: Terminos y Condiciones -->
-			<div class="formulario__grupo-terminos" id="grupo__terminos">
+			<div class="formulario__grupo-iput" id="grupo__terminos">
 				<label class="formulario__label">
 					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
 					Acepto los Terminos y Condiciones
@@ -132,7 +136,7 @@
                       
             <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
                 
         

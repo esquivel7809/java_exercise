@@ -5,7 +5,9 @@ const expresiones = {
 	usuario: /^\d{7,11}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	nombre_acu: /^[a-zA-ZÀ-ÿ\s]{15,30}$/,
+	tel_cel: /^\d{10,}$/
 	// telefono: /^\d{7,14}$/ 
 	
 }
@@ -14,7 +16,9 @@ const campos = {
 	usuario: false,
 	nombre: false,
 	password: false,
-	correo: false
+	correo: false,
+	nombre_acu: false,
+	tel_cel: false
 	// telefono: false
 	
 }
@@ -36,6 +40,12 @@ const validarFormulario = (e) => {
 		break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
+		break;
+		case "nombre_acu":
+			validarCampo(expresiones.nombre_acu, e.target, 'nombre_acu');
+		break;
+		case "tel_cel":
+			validarCampo(expresiones.tel_cel, e.target, 'tel_cel');
 		break;
 		// case "telefono":
 		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
@@ -95,12 +105,14 @@ formulario.addEventListener('submit', (e) => {
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
+		var nombre_acu = document.getElementById('nombre_acu').value;
+		var tel_cel = document.getElementById('tel_cel').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.nombre_acu && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);console.log(nombre_acu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu, nombre_acu: nombre_acu, tel_cel: tel_cel}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
