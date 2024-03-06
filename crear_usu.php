@@ -105,15 +105,15 @@
             </label>
         </div>
 
-        <div class="" id="formulario__mensaje">
+        <div class="formulario__mensaje" id="formulario__mensaje">
             <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
         </div>
         
         <p class="text-center">
                   
         <div class="">
-            <button type="submit" class="" name="save" value="guardar" >Enviar</button>
-            <p class="" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
+            <p class="formulario__validacion-estado" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
         </div>
             
     
