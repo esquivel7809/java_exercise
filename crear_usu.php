@@ -26,8 +26,8 @@
 
                 <!-- div para capturar el documento -->
 
-                <div class="" id="grupo__usuario">
-                    <label for="usuario" class="">Documento *</label>
+                <div class="primero" id="grupo__usuario">
+                    <label for="usuario" class="documento">Documento *</label>
                         <div class="">
                             <input type="text" class="" name="usuario" id="usuario" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -38,7 +38,7 @@
 
                 <!-- div para capturar el nombre -->
 
-                <div class="" id="grupo__nombre">
+                <div class="nombre" id="grupo__nombre">
                     <label for="nombre" class="">Nombres *</label>
                         <div class="">
                             <input type="text" class="" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
@@ -49,7 +49,7 @@
                 </div>
 
                 <!-- Grupo: Contraseña -->
-                <div class="">
+                <div class="Contraseña">
                     <label for="password" class="">Contraseña *</label>
                     <div class="">
                         <input  onkeyup="minus(this);" type="password" class="" name="password" id="password">
@@ -59,7 +59,7 @@
                 </div>
 
                 <!-- Grupo: Contraseña 2 -->
-                <div class="" id="grupo__password2">
+                <div class="Contraseña 2" id="grupo__password2">
                     <label for="password2" class="">Repetir Contraseña *</label>
                         <input type="password" class="" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -69,7 +69,7 @@
         
 
                 <!-- Grupo: Correo Electronico -->
-                <div class="" id="grupo__correo">
+                <div class="Correo" id="grupo__correo">
                     <label for="correo" class="">Correo Electrónico *</label>
                     <div class=">
                         <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
@@ -78,7 +78,7 @@
                     <p class="">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
-                <div class="" id="grupo__telefono">
+                <div class="Tipo Usuario" id="grupo__telefono">
                     <label for="id_tip_use" class="">Tipo Usuario *</label>
 				    <div class="">                 
                         <select  name="id_tip_use" id="id_tip_use" class="" required>
@@ -98,7 +98,7 @@
 
                 
                 <!-- Grupo: Terminos y Condiciones -->
-			<div class="" id="grupo__terminos">
+			<div class="Terminos" id="grupo__terminos">
 				<label class="">
 					<input class="" type="checkbox" name="terminos" id="terminos">
 					Acepto los Terminos y Condiciones
