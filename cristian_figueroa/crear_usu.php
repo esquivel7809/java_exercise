@@ -24,9 +24,7 @@ $con = $db->conectar();
     <main>
         <form method="POST" autocomplete="off" class="formulario" id="formulario">
 
-
             <!-- div para capturar el documento -->
-
             <div class="formulario__grupo-input" id="grupo__usuario">
                 <label for="usuario" class="formulario__label">Documento *</label>
                 <div class="">
@@ -34,11 +32,11 @@ $con = $db->conectar();
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
-                    El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                    El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.
+                </p>
             </div>
 
             <!-- div para capturar el nombre -->
-
             <div class="formulario__grupo-input" id="grupo__nombre">
                 <label for="nombre" class="formulario__label">Nombres *</label>
                 <div class="">
@@ -46,8 +44,31 @@ $con = $db->conectar();
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
-                    El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
+                    El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras.
+                </p>
             </div>
+
+            <!-- div para capturar la edad -->
+            <div class="formulario__grupo-input" id="grupo__edad">
+                <label for="edad" class="formulario__label">Edad *</label>
+                <div class="">
+                    <input type="number" class="formulario__input" name="edad" id="edad" placeholder="Edad">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Por favor ingresa una edad válida.</p>
+            </div>
+
+            <!-- div para capturar los apellidos -->
+            <div class="formulario__grupo-input" id="grupo__apellidos">
+                <label for="apellidos" class="formulario__label">Apellidos *</label>
+                <div class="">
+                    <input type="text" class="formulario__input" name="apellidos" id="apellidos" placeholder="Apellidos">
+                    <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Por favor ingresa tus apellidos.</p>
+            </div>
+
+
 
             <!-- Grupo: Contraseña -->
             <div class="formulario__grupo-input">
@@ -108,23 +129,19 @@ $con = $db->conectar();
             </div>
 
             <div class="formulario__mensaje" id="formulario__mensaje">
-                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
             </div>
-
-            <p class="text-center">
 
             <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar">Enviar</button>
                 <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
-
-
         </form>
     </main>
+
     <script src="../js/jquery.js"></script>
     <script src="../js/formulario.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-
     <!--  Javascript funcion para convertor en mayusculas y minusculas -->
     <!-- <script src="../js/main.js"></script> -->
     <script>
