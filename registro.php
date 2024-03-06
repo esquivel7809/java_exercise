@@ -9,7 +9,7 @@ $con = $db->conectar();
 
 $usu = $_POST['doc'];
 $nom = $_POST['nom'];
-$pass = $_POST['password'];
+$pass = $_POST['pass'];
 $email = $_POST['email'];
 $ciudad = $_POST['ciudad'];
 $codigo_postal = $_POST['codigo_postal'];
@@ -23,3 +23,4 @@ echo $email;
 echo $ciudad;
 echo $codigo_postal;
 echo $tip_usu;
+

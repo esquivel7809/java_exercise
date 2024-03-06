@@ -7,7 +7,7 @@ const expresiones = {
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	ciudad: /^[a-zA-ZÀ-ÿ\s'-]{5,10}$/,
-	codigo_postal: /^\d{7,10}$/,
+	codigo_postal: /^\d{6,10}$/,
 	// telefono: /^\d{7,14}$/ 
 	
 }
@@ -44,8 +44,8 @@ const validarFormulario = (e) => {
 		case "ciudad":
 			validarCampo(expresiones.ciudad, e.target, 'ciudad');
 		break;
-		case "codigo postal":
-			validarCampo(expresiones.correo, e.target, 'codigo_postal');
+		case "codigo_postal":
+			validarCampo(expresiones.codigo_postal, e.target, 'codigo_postal');
 		break;
 		// case "telefono":
 		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
@@ -102,7 +102,7 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 		var doc = document.getElementById('usuario').value;
 		var nom = document.getElementById('nombre').value;
-		var pas = document.getElementById('password').value;
+		var pass = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var ciudad = document.getElementById('ciudad').value;
 		var codigo_postal = document.getElementById('codigo_postal').value;
@@ -111,8 +111,8 @@ formulario.addEventListener('submit', (e) => {
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.password && campos.correo  && campos.ciudad && campos.codigo_postal && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(ciudad);console.log(codigo_postal);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, ciudad: ciudad, codigo_postal: codigo_postal, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(pass);console.log(email);console.log(ciudad);console.log(codigo_postal);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pass: pass, email: email, ciudad: ciudad, codigo_postal: codigo_postal, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		

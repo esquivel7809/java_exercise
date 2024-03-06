@@ -52,7 +52,7 @@
                 <div class="formulario__grupo-input" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
                     <div class="formulario__grupo-input">
-                        <input onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
+                        <input onkeyup="minus(this);" type="password" class="formulario__input" name="pass" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos Alfanumericos.</p>
@@ -73,7 +73,7 @@
                 <div class="formulario__grupo-input" id="grupo__correo">
                     <label for="correo" class="formulario__label">Correo Electrónico *</label>
                     <div class="formulario__grupo-input">
-                        <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                        <input onkeyup="minus(this);" type="correo" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
@@ -82,7 +82,7 @@
                 <div class="formulario__grupo-input" id="grupo__ciudad">
                     <label for="ciudad" class="formulario__label">Ciudad *</label>
                         <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="ciudad" id="ciudad" placeholder="Ciudad">
+                            <input type="ciudad" class="formulario__input" name="ciudad" id="ciudad" placeholder="ciudad">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
@@ -90,13 +90,13 @@
                 </div>
                 
                 <div class="formulario__grupo-input" id="grupo__codigo_postal">
-                    <label for="codigo_postal" class="formulario__label">Codigo Postal *</label>
+                    <label for="codigo_postal" class="formulario__label">Codigo postal *</label>
                         <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="codigo_postal" id="codigo_postal" placeholder="Código Postal">
+                            <input type="codigo_postal" class="formulario__input" name="codigo_postal" id="codigo_postal" placeholder="codigo postal">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            La dirección no coincide.</p>
+                            El codigo postal no coincide.</p>
                 </div>
 
                 <div class="formulario__grupo-input" id="grupo__telefono">
