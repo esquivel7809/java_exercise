@@ -12,6 +12,7 @@ main {
 	width: 90%;
 	margin: auto;
 	padding: 40px;
+	background-color: rgb(161, 203, 222);
 }
 
 .formulario {
@@ -135,7 +136,7 @@ main {
 
 .formulario__mensaje-exito {
 	font-size: 14px;
-	color: #119200;
+	color: #000c92;
 	display: none;
 }
 
@@ -150,16 +151,16 @@ main {
 }
 
 .formulario__grupo-incorrecto .formulario__label {
-	color: #bb2929;
+	color: #bb9429;
 }
 
 .formulario__grupo-incorrecto .formulario__validacion-estado {
-	color: #bb2929;
+	color: #d7a12b;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__input {
-	border: 3px solid #bb2929;
+	border: 3px solid #d41919;
 }
 
 

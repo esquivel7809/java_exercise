@@ -67,6 +67,25 @@
                     <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
+                <div class="formulario__grupo-input" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Dirección *</label>
+                        <div class="">
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
+                </div>
+                
+                <div class="formulario__grupo-input" id="grupo__usuario">
+                    <label for="usuario" class="formulario__label">Telefono fijo *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                </div>
 
                 <!-- Grupo: Correo Electronico -->
                 <div class="formulario__grupo-input" id="grupo__correo">
@@ -105,7 +124,7 @@
 				</label>
 			</div>
 
-			<div class="formulario__grupo-terminos" id="formulario__mensaje">
+			<div class="formulario__mensaje" id="formulario__mensaje">
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
             
@@ -113,7 +132,7 @@
                       
             <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
                 
         
