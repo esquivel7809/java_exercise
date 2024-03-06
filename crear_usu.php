@@ -1,7 +1,12 @@
 <?php
 require 'conexion/database.php';
 $db = new Database();
-$con = $db->conectar();
+try {
+    $con = $db->conectar();
+} catch (PDOException $e) {
+    echo "Error de conexión: " . $e->getMessage();
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,11 +27,11 @@ $con = $db->conectar();
             <div class="formulario__label" id="grupo__usuario">
                 <label for="usuario" class="formulario__label">Documento *</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
+                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento" required>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
-                    El documento tiene que ser de 6 a 11 dígitos y solo puede contener números.
+                    El documento tiene que ser de 7 a 11 dígitos y solo puede contener números.
                 </p>
             </div>
 
@@ -34,7 +39,7 @@ $con = $db->conectar();
             <div class="formulario__label" id="grupo__nombre">
                 <label for="nombre" class="formulario__label">Nombres *</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
+                    <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Nombres" required>
                     <i class=""></i>
                 </div>
                 <p class="formulario__input-error">
@@ -45,7 +50,7 @@ $con = $db->conectar();
             <div class="formulario__label-input" id="grupo_password">
                 <label for="password" class="formulario__label">Contraseña *</label>
                 <div class="formulario__grupo-input">
-                    <input onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password" autocomplete="new-password">
+                    <input type="password" class="formulario__input" name="password" id="password" autocomplete="new-password" required>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 caracteres alfanuméricos.</p>
@@ -55,17 +60,16 @@ $con = $db->conectar();
             <div class="formulario__label-input" id="grupo_password2">
                 <label for="password2" class="formulario__label">Repetir Contraseña *</label>
                 <div class="formulario__grupo-input">
-                    <input type="password" class="formulario__input" name="password2" id="password2">
+                    <input type="password" class="formulario__input" name="password2" id="password2" required>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
             </div>
 
-
             <div class="formulario__label" id="grupo__nombre_m">
                 <label for="nombre_m" class="formulario__label">Nombres De La Madre *</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre_m" id="nombre_m" placeholder="Nombres">
+                    <input type="text" class="formulario__input" name="nombre_m" id="nombre_m" placeholder="Nombres" required>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
@@ -76,7 +80,7 @@ $con = $db->conectar();
             <div class="formulario__label" id="grupo__nombre_p">
                 <label for="nombre_p" class="formulario__label">Nombre del padre *</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre_p" id="nombre_p" placeholder="Nombres">
+                    <input type="text" class="formulario__input" name="nombre_p" id="nombre_p" placeholder="Nombres" required>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
@@ -84,13 +88,11 @@ $con = $db->conectar();
                 </p>
             </div>
 
-
-
             <!-- Grupo: Correo Electrónico -->
             <div class="formulario__label" id="grupo_correo">
                 <label for="correo" class="formulario__label">Correo Electrónico *</label>
                 <div class="formulario__grupo-input">
-                    <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                    <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com" required>
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
@@ -107,15 +109,14 @@ $con = $db->conectar();
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                             echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
                         }
-                        ?>
-                    </select>
+                        ?> </select>
                 </div>
             </div>
 
             <!-- Grupo: Terminos y Condiciones -->
             <div class="formulario__grupo-terminos" id="grupo_terminos">
                 <label class="formulario__label">
-                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos" required>
                     Acepto los Términos y Condiciones
                 </label>
             </div>
@@ -134,15 +135,6 @@ $con = $db->conectar();
     <script src="js/jquery.js"></script>
     <script src="js/formulario.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-    <script>
-        function mayus(e) {
-            e.value = e.value.toUpperCase();
-        }
-
-        function minus(e) {
-            e.value = e.value.toLowerCase();
-        }
-    </script>
 </body>
 
 </html>
