@@ -32,7 +32,7 @@
                             <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="formulario__mensaje-exito">
+                        <p class="formulario__input-error">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
@@ -44,7 +44,7 @@
                             <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
-                        <p class="formulario__mensaje">
+                        <p class="formulario__input-error">
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
@@ -55,7 +55,7 @@
                         <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__mensaje">La contraseña tiene que ser de 8 a 12 dígitos Alfanumericos.</p>
+                    <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos Alfanumericos.</p>
                 </div>
 
                 <!-- Grupo: Contraseña 2 -->
@@ -64,7 +64,7 @@
                         <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__mensaje">Ambas contraseñas deben ser iguales.</p>
+                    <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
 
@@ -75,7 +75,7 @@
                         <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__mensaje">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
 
                 <div class="formulario__grupo-select" id="grupo__telefono">
@@ -98,7 +98,7 @@
 
                 
                 <!-- Grupo: Terminos y Condiciones -->
-			<div class="formulario__grupo-input" id="grupo__terminos">
+			<div class="formulario__grupo-terminos" id="grupo__terminos">
 				<label class="formulario__label">
 					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
 					Acepto los Terminos y Condiciones
