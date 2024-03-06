@@ -35,23 +35,24 @@
                         <p class="formulario__input-error">
                             El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
+              
 
                 <!-- div para capturar el nombre -->
 
                 <div class="formulario__grupo-input" id="grupo__nombre">
                     <label for="nombre" class="formulario__label">Nombres *</label>
-                        <div class="">
+                        <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
+                            El usuario tiene que ser de 15 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
-                <!-- Grupo: Contraseña -->
-                <div class="formulario__grupo-input">
+               <!-- Grupo: Contraseña -->
+               <div class="formulario__grupo-input" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
-                    <div class="">
+                    <div class="formulario__grupo-input">
                         <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
@@ -61,6 +62,7 @@
                 <!-- Grupo: Contraseña 2 -->
                 <div class="formulario__grupo-input" id="grupo__password2">
                     <label for="password2" class="formulario__label">Repetir Contraseña *</label>
+                    <div class="formulario__grupo-input">
                         <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
