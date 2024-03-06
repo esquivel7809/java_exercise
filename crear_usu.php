@@ -27,7 +27,7 @@
                 <!-- div para capturar el documento -->
 
                 <div class="formulario__grupo" id="grupo__usuario">
-                    <label for="usuario" class="formulario__label">Documento *</label>
+                    <label for="usuario" class="formulario__label">cedula *</label>
                         <div class="formulario__grupo-input">
                             <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
