@@ -6,8 +6,8 @@ const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ 
-	
+	telefono: /^\d{7,14}$/,
+	ocupacion: /^[a-zA-ZÀ-ÿ\s]{5,40}$/
 }
 
 const campos = {
@@ -15,7 +15,8 @@ const campos = {
 	nombre: false,
 	password: false,
 	correo: false,
-	telefono: false
+	telefono: false,
+	ocupacion: false
 	
 }
 
@@ -39,6 +40,9 @@ const validarFormulario = (e) => {
 		break;
 		case "telefono":
 			validarCampo(expresiones.telefono, e.target, 'telefono');
+		break;
+		case "ocupacion":
+			validarCampo(expresiones.ocupacion, e.target, 'ocupacion');
 		break;
 		
 	}
@@ -93,6 +97,7 @@ formulario.addEventListener('submit', (e) => {
 		var doc = document.getElementById('usuario').value;
 		var nom = document.getElementById('nombre').value;
 		var tel = document.getElementById('telefono').value;
+		var ocu = document.getElementById('ocupacion').value;
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
@@ -100,8 +105,8 @@ formulario.addEventListener('submit', (e) => {
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.telefono && campos.password && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(tel);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, tel: tel, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(tel);console.log(ocu);console.log(pas);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, tel: tel, ocu: ocu, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		

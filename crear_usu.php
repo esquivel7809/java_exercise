@@ -60,6 +60,18 @@
                             El numero tiene que ser de 10 dígitos y solo puede contener numeros.</p>
                 </div>
 
+                <!-- div para capturar la ocupacion -->
+
+                <div class="formulario__grupo-input" id="grupo__ocupacion">
+                    <label for="ocupacion" class="formulario__label">Ocupacion *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="ocupacion" id="ocupacion" placeholder="Ocupacion">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            La ocupacion debe tener entre 5 a 20 dígitos y solo puede contener letras</p>
+                </div>
+
                 <!-- Grupo: Contraseña -->
                 <div class="formulario__grupo-input" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
