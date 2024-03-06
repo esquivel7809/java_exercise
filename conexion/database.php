@@ -3,9 +3,9 @@ class Database
 {
 
     private $hostname = "localhost";
-    private $database = "login";
+    private $database = "bd";
     private $username = "root";
-    private $password = "";
+    private $password = "123456";
     private $chasrset = "utf8";
 
     function conectar()

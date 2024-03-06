@@ -48,6 +48,26 @@
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
+                <div class="" id="grupo__nombre">
+                    <label for="apellido" class="">Apellidos *</label>
+                        <div class="">
+                            <input type="text" class="" onkeyup="mayus(this);" name="apellido" id="apellido" placeholder="Apellidos">
+                            <i class=""></i>
+                        </div>
+                        <p class="">
+                            El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
+                </div>
+
+                <div class="" id="grupo__usuario">
+                    <label for="number" class="">Celular *</label>
+                        <div class="">
+                            <input type="text" class="" name="celular" id="celular" placeholder="Celular">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="">
+                            EL celular tiene que ser de 11 a 12 dígitos y solo puede contener numeros.</p>
+                </div>
+
                 <!-- Grupo: Contraseña -->
                 <div class="">
                     <label for="password" class="">Contraseña *</label>
@@ -72,7 +92,7 @@
                 <div class="" id="grupo__correo">
                     <label for="correo" class="">Correo Electrónico *</label>
                     <div class=">
-                        <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                        <input onkeyup= "minus(this); type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
