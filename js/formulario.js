@@ -107,6 +107,9 @@ formulario.addEventListener('submit', (e) => {
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
+		var validacion = "<?php echo $validacion; ?>";
+		console.log(validacion);
+		
 
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.dir && campos.edad && campos.password && campos.correo  && terminos.checked ){
@@ -123,9 +126,15 @@ formulario.addEventListener('submit', (e) => {
 
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');
+			
+			if (validacion == 1){
+			alert ("Registro realizado exitosamente");
+			}
+			else {
+			alert ("Documento ya existente");
+			}
 		});
 	} 
 });
 
-var validacion = "<?php echo $validacion; ?>";
-console.log(validacion);
+
