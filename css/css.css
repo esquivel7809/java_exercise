@@ -59,7 +59,7 @@ main {
 }
 
 .formulario__input:focus {
-	border: 3px solid #0075FF;
+	border: 3px solid #000000;
 	outline: none;
 	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 }
@@ -94,10 +94,9 @@ main {
 }
 
 .formulario__mensaje {
-	height: 45px;
 	line-height: 45px;
-	background: #F66060;
-	padding: 0 15px;
+	background: #fb0071;
+	padding: 0 0px;
 	border-radius: 3px;
 	display: none;
 }
@@ -120,8 +119,8 @@ main {
 	height: 45px;
 	line-height: 45px;
 	width: 30%;
-	background: #000;
-	color: #fff;
+	background: #e5ff00;
+	color: #000000;
 	font-weight: bold;
 	border: none;
 	border-radius: 3px;
@@ -135,7 +134,7 @@ main {
 
 .formulario__mensaje-exito {
 	font-size: 14px;
-	color: #119200;
+	color: #ff057e;
 	display: none;
 }
 
@@ -145,21 +144,21 @@ main {
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
-	color: #1ed12d;
+	color: #ff057e;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__label {
-	color: #bb2929;
+	color: #3f29bb;
 }
 
 .formulario__grupo-incorrecto .formulario__validacion-estado {
-	color: #bb2929;
+	color: #3f29bb;
 	opacity: 1;
 }
 
 .formulario__grupo-incorrecto .formulario__input {
-	border: 3px solid #bb2929;
+	border: 3px solid #3f29bb;
 }
 
 
