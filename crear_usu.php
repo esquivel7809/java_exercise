@@ -48,6 +48,8 @@
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
+                
+
                 <!-- Grupo: Contraseña -->
                 <div class="formulario__grupo-input" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
@@ -67,6 +69,7 @@
                     </div>
                     <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
+                
         
 
                 <!-- Grupo: Correo Electronico -->
@@ -78,6 +81,8 @@
                     </div>
                     <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
+
+                
 
                 <div class="formulario__grupo-input" id="grupo__telefono">
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
@@ -94,6 +99,42 @@
                                 ?>
                         </select>
                     </div>
+
+                    <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="id_genero" class="formulario__label">Genero *</label>
+        <div class="">                 
+                        <select name="id_genero" id="id_genero" class="formulario__select" required>
+                            <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
+                                <?php
+                                   /*Consulta para mostrar las opciones en el select */
+                                    $statement = $con->prepare('SELECT * from genero');
+                                    $statement->execute();
+                                    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                                      echo "<option value=" . $row['id_genero'] . ">" . $row['genero'] . "</option>";
+                                    }
+                                ?>
+                        </select>
+                    </div>
+
+                    <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="id_ciudad" class="formulario__label">Ciudad *</label>
+        <div class="">                 
+                        <select name="id_ciudad" id="id_ciudad" class="formulario__select" required>
+                            <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
+                                <?php
+                                   /*Consulta para mostrar las opciones en el select */
+                                    $statement = $con->prepare('SELECT * from ciudad');
+                                    $statement->execute();
+                                    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                                      echo "<option value=" . $row['id_ciudad'] . ">" . $row['ciudad'] . "</option>";
+                                    }
+                                ?>
+                        </select>
+                    </div>
+
+                    
+
+                    
                     
                 </div>  
 
