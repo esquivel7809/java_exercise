@@ -4,6 +4,8 @@ const inputs = document.querySelectorAll('#formulario input');
 const expresiones = {
 	usuario: /^\d{7,11}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
+	edad: /^\d{2,3}$/, 
+	dir:  /^[a-zA-Z0-9-\s]{8,40}$/, 
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 	// telefono: /^\d{7,14}$/ 
@@ -13,6 +15,8 @@ const expresiones = {
 const campos = {
 	usuario: false,
 	nombre: false,
+	dir: false,
+	edades: false,
 	password: false,
 	correo: false
 	// telefono: false
@@ -26,6 +30,12 @@ const validarFormulario = (e) => {
 		break;
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
+		break;
+		case "dir":
+			validarCampo(expresiones.dir, e.target, 'dir');
+		break;
+		case "edad":
+			validarCampo(expresiones.edad, e.target, 'edad');
 		break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
@@ -92,15 +102,17 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 		var doc = document.getElementById('usuario').value;
 		var nom = document.getElementById('nombre').value;
+		var dir = document.getElementById('dir').value;
+		var edad = document.getElementById('edad').value;
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.dir && campos.edad && campos.password && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(dir);console.log(edad);console.log(pas);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, dir : dir, edad : edad, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
@@ -114,3 +126,6 @@ formulario.addEventListener('submit', (e) => {
 		});
 	} 
 });
+
+var validacion = "<?php echo $validacion; ?>";
+console.log(validacion);

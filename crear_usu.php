@@ -45,6 +45,26 @@
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
                 
+                 <!-- Grupo: direccion -->
+                 <div class="formulario__grupo-input" id="grupo__dir">
+                    <label for="direccion" class="formulario__label">Direccion *</label>
+                    <div class="formulario__grupo-input">
+                        <input type="varchar" class="formulario__input" name="dir" id="dir" placeholder="Direccion">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">La direccion debe ser minimo de 8 caracteres</p>
+                </div>
+
+                <!-- Grupo: edad -->
+                <div class="formulario__grupo-input" id="grupo__edad">
+                    <label for="edad" class="formulario__label">Edad *</label>
+                    <div class="formulario__grupo-input">
+                        <input type="varchar" class="formulario__input" name="edad" id="edad" placeholder="Edad">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">Para acceder debe tener minimo 10 años</p>
+                </div>
+
                 <!-- Grupo: Contraseña -->
                 <div class="formulario__grupo-input"  id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
@@ -109,6 +129,7 @@
             <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
                 <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
             </div>
                 
         
