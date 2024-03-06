@@ -7,7 +7,7 @@ const expresiones = {
 	apellido: /^[a-zA-ZÀ-ÿ\s]{3,15}$/,
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	direccion: /^[a-zA-ZÀ-ÿ\s]{5,80}$/
+	direccion: /^[a-zA-Z0-9\s#.,-]{5,100}$/
 	// telefono: /^\d{7,14}$/ 
 	
 }
@@ -44,7 +44,7 @@ const validarFormulario = (e) => {
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
 		break;
-		case "correo":
+		case "direccion":
 			validarCampo(expresiones.direccion, e.target, 'direccion');
 		break;
 		// case "telefono":

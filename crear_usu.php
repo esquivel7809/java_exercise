@@ -1,5 +1,5 @@
 <?php
-require 'conexion/database.php';
+require './conexion/database.php';
 $db = new Database();
 $con = $db->conectar();
 
@@ -91,14 +91,17 @@ $con = $db->conectar();
                 <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
             </div>
 
+            <!-- Grupo: Correo Direccion -->
             <div class="" id="grupo__direccion">
                 <label for="direccion" class="formulario__label">Direccion *</label>
                 <div class="formulario__grupo-input">
                     <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Direccion">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
-                <p class="formulario__input-error">La debe contener mínimo 5 caracteres</p>
+                <p class="formulario__input-error">La dirección debe contener mínimo 5 caracteres</p>
             </div>
+
+
 
             <div class="formulario__grupo-input" id="grupo__telefono">
                 <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
