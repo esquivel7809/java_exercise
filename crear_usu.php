@@ -19,8 +19,7 @@
 
 <body>
    <main>
-        <form  method="POST" autocomplete="off" class="formulario" id="formulario">
-            
+        <form  method="POST" autocomplete="off" class="formulario" id="formulario">           
                 <!-- div para capturar el documento -->
 
                 <div class="formulario__grupo-input" id="grupo__usuario">
@@ -44,7 +43,16 @@
                         <p class="formulario__input-error">
                             El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
                 </div>
-                
+                <!-- div para capturar la eps -->
+                <div class="formulario__grupo-input" id="grupo__eps">
+                    <label for="eps" class="formulario__label">Eps*</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="eps" id="eps" placeholder="eps">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            La EPS tiene que ser de 8 a 40 dígitos y solo puede contener letras</p>
+                </div>
                 <!-- Grupo: Contraseña -->
                 <div class="formulario__grupo-input"  id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
@@ -73,6 +81,23 @@
                     </div>
                     <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                 </div>
+                <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="id_tip_use" class="formulario__label">Ciudad De Recidencia*</label>
+                    <div class="formulario__grupo-select">               
+                        <select  name="cuidad" id="cuidad" class="formulario__select  " required>
+                            <!-- <option value="" selected="">** Seleccione cuidad **</option> -->
+                                <?php
+                                   /*Consulta para mostrar las opciones en el select */
+                                    $statement = $con->prepare('SELECT * from cuidad');
+                                    $statement->execute();
+                                    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                                      echo "<option value=" . $row['id_cuidad'] . ">" . $row['cuidad'] . "</option>";
+                                    }
+                                ?>
+                        </select>
+                    </div>
+                    
+                </div>  
 
                 <div class="formulario__grupo-input" id="grupo__telefono">
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
@@ -92,7 +117,7 @@
                     
                 </div>  
 
-                
+              
                 <!-- Grupo: Terminos y Condiciones -->
             <div class="formulario__checkbox" id="grupo__terminos">
                 <label class="formulario__checkbox">
@@ -111,14 +136,12 @@
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
                 <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
-                
-        
+                     
         </form>
    </main>
    <script src="js/jquery.js"></script>
    <script src="js/formulario.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-
     <!--  Javascript funcion para convertor en mayusculas y minusculas -->
     <!-- <script src="../js/main.js"></script> -->
     <script>
@@ -129,8 +152,6 @@
         function minus(e) {
         e.value = e.value.toLowerCase();
         }
-    </script>
-  
+    </script> 
 </body>
-
 </html>
