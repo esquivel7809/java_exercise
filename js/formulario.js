@@ -6,7 +6,9 @@ const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	telefono: /^\d{7,14}$/ 
+	telefono: /^\d{7,14}$/,
+	direccion: /^[a-zA-Z0-9_.+-]+$/
+
 	
 }
 
@@ -15,7 +17,8 @@ const campos = {
 	nombre: false,
 	password: false,
 	correo: false,
-	telefono: false
+	telefono: false,
+	direccion: false
 	
 }
 
@@ -39,6 +42,9 @@ const validarFormulario = (e) => {
 		break;
 		case "telefono":
 		validarCampo(expresiones.telefono, e.target, 'telefono');
+		break;
+		case "direccion":
+		validarCampo(expresiones.direccion, e.target, 'direccion');
 		break;
 		
 	}
@@ -92,16 +98,17 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 		var doc = document.getElementById('usuario').value;
 		var nom = document.getElementById('nombre').value;
+		var dic = document.getElementById('direccion').value;
 		var tel= document.getElementById('telefono').value;
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.telefono && campos.password && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.direccion && campos.telefono && campos.password && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom); console.log (tel);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, tel: tel, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom); console.log (dic); console.log (tel);console.log(pas);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, dic: dic, tel: tel, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		

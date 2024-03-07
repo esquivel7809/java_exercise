@@ -61,6 +61,21 @@
                             El usuario tiene que ser de 15 a 40 dígitos y solo puede contener letras</p>
                 </div>
 
+                
+                <!-- div para capturar la direccion -->
+
+                <div class="formulario__grupo-input" id="grupo__direccion">
+                    <label for="direccion" class="formulario__label">Direccion *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Direccion">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">
+                            la direccion tiene que ser de 6 a 100 caracteres.</p>
+                </div>
+
+                
+
                <!-- Grupo: Contraseña -->
                <div class="formulario__grupo-input" id="grupo__password">
                     <label for="password" class="formulario__label">Contraseña *</label>
