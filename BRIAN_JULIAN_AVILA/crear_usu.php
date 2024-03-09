@@ -174,7 +174,7 @@ $con = $db->conectar();
 
         function generarcapchat() {
            
-            var caracteres = 'A';
+            var caracteres = 'ABCDEFGHIJKLMNÑOPKRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789@+-*/.;,{}[]?!¡¿';
 
 
             var longitud = 1;
