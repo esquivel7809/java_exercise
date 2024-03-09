@@ -20,7 +20,7 @@ if (isset($_POST['doc']) && isset($_POST['nom']) && isset($_POST['pas']) && isse
         $con = $db->conectar();
 
         // Verificar si los datos ya existen en la base de datos
-        $statement_check = $con->prepare("SELECT * FROM tabla_usuarios WHERE doc = :doc");
+        $statement_check = $con->prepare("SELECT * FROM usuarios WHERE doc = :doc");
         $statement_check->bindParam(':doc', $doc);
         $statement_check->execute();
         $result = $statement_check->fetch(PDO::FETCH_ASSOC);

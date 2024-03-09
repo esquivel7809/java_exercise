@@ -110,7 +110,7 @@ formulario.addEventListener('submit', (e) => {
     if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.madre && campos.telefono && terminos.checked ){
         formulario.reset();
         console.log(doc); console.log(nom); console.log(pas); console.log(email); console.log(tip_usu); console.log(madre); console.log(telefono);
-        $.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu, madre: madre, telefono: telefono}, function(document){$("#mensaje").html(document);}),
+        $.post ("../registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu, madre: madre, telefono: telefono}, function(document){$("#mensaje").html(document);}),
         
         document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
         setTimeout(() => {
