@@ -93,6 +93,7 @@ $con = $db->conectar();
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                
             </div>
 
             <div class="formulario__label" id="grupo__telefono">
@@ -129,7 +130,7 @@ $con = $db->conectar();
                     <label for="vr2" class="formulario__label">Ingrese el capchat *</label>
                     <div class="formulario__grupo-input" id="grupo__vr2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        <input type="" class="formulario__input" name="vr2" id="vr2" placeholder="INGRESE_LOS_DIGITOS_DEL_CAPCHAT" required onpaste="return false;" oncopy="return false;">
+                        <input type="" class="formulario__input" name="vr2" id="vr2" placeholder="INGRESE_LOS_DIGITOS_DEL_CAPCHAT" required onpaste="return false;" oncopy="return false;" >
 
                     </div>
                     <p class="formulario__input-error">La información ingresada no coincide con el capchat.</p>
@@ -172,10 +173,11 @@ $con = $db->conectar();
 
 
         function generarcapchat() {
-            var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+           
+            var caracteres = 'A';
 
 
-            var longitud = 5;
+            var longitud = 1;
 
             var captcha = '';
 
@@ -188,6 +190,7 @@ $con = $db->conectar();
 
 
             document.getElementById('verify').value = captcha;
+            
         }
     </script>
     </script>

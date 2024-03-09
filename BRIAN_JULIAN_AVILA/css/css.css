@@ -151,6 +151,7 @@ main {
 .formulario__grupo-correcto .formulario__validacion-estado {
 	color: #34f1ff;
 	opacity: 1;
+	
 }
 
 .formulario__grupo-incorrecto .formulario__label {
@@ -183,4 +184,5 @@ main {
 		width: 100%;
 	}
 }
+
 

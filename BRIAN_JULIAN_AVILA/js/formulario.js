@@ -117,34 +117,54 @@ inputs.forEach((input) => {
 });
 
 formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
-	var doc = document.getElementById('usuario').value;
-	var nom = document.getElementById('nombre').value;
-	var pas = document.getElementById('password').value;
-	var email = document.getElementById('correo').value;
-	var tip_usu = document.getElementById('id_tip_use').value;
-	var edad = document.getElementById('edad').value;
+    e.preventDefault();
+    var doc = document.getElementById('usuario').value;
+    var nom = document.getElementById('nombre').value;
+    var pas = document.getElementById('password').value;
+    var email = document.getElementById('correo').value;
+    var tip_usu = document.getElementById('id_tip_use').value;
+    var edad = document.getElementById('edad').value;
 
+    const terminos = document.getElementById('terminos');
+    if (campos.usuario && campos.nombre && campos.password && campos.correo && campos.edad && terminos.checked) {
+        formulario.reset();
+        console.log(doc); console.log(nom); console.log(pas); console.log(email); console.log(tip_usu); console.log(edad);
 
+        // Crear objeto FormData y añadir los datos del formulario
+        var formData = new FormData();
+        formData.append('doc', doc);
+        formData.append('nom', nom);
+        formData.append('pas', pas);
+        formData.append('email', email);
+        formData.append('tip_usu', tip_usu);
+        formData.append('edad', edad);
 
+        // Enviar los datos mediante una petición POST a registro.php
+        fetch('registro.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            // Mostrar la respuesta del servidor en una alerta
+            alert(data);
+            // Aquí puedes manejar la respuesta del servidor como desees
+            // Por ejemplo, mostrar un mensaje en la página
+            // document.getElementById('mensaje').innerText = data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 
-	const terminos = document.getElementById('terminos');
-	if (campos.usuario && campos.nombre && campos.password && campos.correo && campos.edad && terminos.checked) {
-		formulario.reset();
-		console.log(doc); console.log(nom); console.log(pas); console.log(email); console.log(tip_usu); console.log(edad);
-		$.post("registro.php?cod=datos", { doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu, edad: edad, }, function (document) {
-			$("#mensaje").html(document);
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+        }, 5000);
 
-		}),
-
-			document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
-		setTimeout(() => {
-			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
-		}, 5000);
-
-		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-			icono.classList.remove('formulario__grupo-correcto');
-		});
-	}
+        document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+            icono.classList.remove('formulario__grupo-correcto');
+        });
+    }
 });
+
 
