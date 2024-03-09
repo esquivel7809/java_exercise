@@ -10,11 +10,11 @@ if(isset($_POST['doc'], $_POST['nom'], $_POST['pas'], $_POST['email'], $_POST['t
     $tip_usu = $_POST['tip_usu'];
     $edad = $_POST['edad'];
     
-    // Realizar conexión a la base de datos (debes llenar estos datos con los de tu servidor)
-    $servidor = "localhost"; // Cambia por tu servidor de base de datos
-    $usuario = "root"; // Cambia por tu usuario de base de datos
-    $password = ""; // Cambia por tu contraseña de base de datos
-    $base_datos = "login"; // Cambia por el nombre de tu base de datos
+    
+    $servidor = "localhost"; 
+    $usuario = "root"; 
+    $password = ""; 
+    $base_datos = "login"; 
     
     // Conexión
     $conexion = new mysqli($servidor, $usuario, $password, $base_datos);
