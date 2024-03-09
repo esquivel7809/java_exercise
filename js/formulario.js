@@ -103,8 +103,8 @@ formulario.addEventListener('submit', (e) => {
     var pas = document.getElementById('password').value;
     var email = document.getElementById('correo').value;
     var tip_usu = document.getElementById('id_tip_use').value;
-    var madre = document.getElementById('madre').value; // Obtener el valor del campo de la madre
-    var telefono = document.getElementById('telefono').value; // Obtener el valor del campo de teléfono
+    var madre = document.getElementById('madre').value; 
+    var telefono = document.getElementById('telefono').value; 
 
     const terminos = document.getElementById('terminos');
     if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.madre && campos.telefono && terminos.checked ){

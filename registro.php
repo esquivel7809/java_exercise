@@ -20,7 +20,7 @@ if (isset($_POST['doc']) && isset($_POST['nom']) && isset($_POST['pas']) && isse
         $con = $db->conectar();
 
         // Verificar si los datos ya existen en la base de datos
-        $statement_check = $con->prepare("SELECT * FROM tabla_usuarios WHERE documento = :doc");
+        $statement_check = $con->prepare("SELECT * FROM tabla_usuarios WHERE doc = :doc");
         $statement_check->bindParam(':doc', $doc);
         $statement_check->execute();
         $result = $statement_check->fetch(PDO::FETCH_ASSOC);
@@ -32,7 +32,7 @@ if (isset($_POST['doc']) && isset($_POST['nom']) && isset($_POST['pas']) && isse
             // Los datos no existen, proceder con la inserción
 
             // Preparar la consulta SQL para insertar los datos en la base de datos
-            $statement = $con->prepare("INSERT INTO tabla_usuarios (documento, nombre, contraseña, correo, id_tipo_usuario, nombre_madre, telefono) VALUES (:doc, :nom, :pas, :email, :tip_usu, :madre, :telefono)");
+            $statement = $con->prepare("INSERT INTO usuarios (doc, nom, pas, email, tip_usu, madre, telefono) VALUES (:doc, :nom, :pas, :email, :tip_usu, :madre, :telefono)");
             $statement->bindParam(':doc', $doc);
             $statement->bindParam(':nom', $nom);
             $statement->bindParam(':pas', $pas);
@@ -93,6 +93,11 @@ function validarCorreo($email)
     return true; // Retorna true si el correo es válido, false de lo contrario
 }
 
+function validarmadre($madre)
+{
+    // Agrega aquí la lógica de validación para el número de teléfono
+    return true; // Retorna true si el teléfono es válido, false de lo contrario
+}
 function validarTelefono($telefono)
 {
     // Agrega aquí la lógica de validación para el número de teléfono

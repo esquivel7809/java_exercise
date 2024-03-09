@@ -22,7 +22,7 @@ $con = $db->conectar();
 
 <body>
     <main>
-        <form method="POST" autocomplete="off" class="formulario" id="formulario">
+        <form method="POST" action="#" autocomplete="off" class="formulario" id="formulario">
 
 
             <!-- div para capturar el documento -->
