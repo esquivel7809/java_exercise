@@ -8,6 +8,7 @@
 
 <!--  -->
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                            El documento tiene que ser de 7 a 11 dígitos y solo puede contener numeros.</p>
                 </div>
 
                 <!-- div para capturar el nombre -->
@@ -45,18 +46,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            El usuario tiene que ser de 6 a 18 dígitos y solo puede contener letras</p>
-                </div>
-
-                <!-- div para capturar el apellido -->
-                <div class="formulario__grupo-input" id="grupo__apellido">
-                    <label for="apellido" class="formulario__label">Apellido *</label>
-                        <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="apellido" id="apellido" placeholder="Apellidos">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                        </div>
-                        <p class="formulario__input-error">
-                            Los apellidos del usuario tienen que ser de 6 a 20 dígitos y solo puede contener letras.</p>
+                            El usuario tiene que ser de 8 a 18 dígitos y solo puede contener letras</p>
                 </div>
                 
 
@@ -67,7 +57,7 @@
                         <input  onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos Alfanumericos.</p>
+                    <p class="formulario__input-error">La contraseña tiene que ser de 5 a 12 dígitos Alfanumericos.</p>
                 </div>
 
                 <!-- Grupo: Contraseña 2 -->
@@ -80,6 +70,17 @@
                     <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
                 </div>
         
+
+                <!-- grupo: region -->
+
+                <div class="formulario__grupo-input" id="grupo__region">
+                    <label for="region" class="formulario__label">Region *</label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="region" id="region" placeholder="Region">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">la region tiene que ser 4 a 11 dígitos y solo puede contener letras</p>
+                </div>
 
                 <!-- Grupo: telefono -->
                 <div class="formulario__grupo-input"  id="grupo__telefono">

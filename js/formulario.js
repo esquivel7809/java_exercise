@@ -3,9 +3,9 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
 	usuario: /^\d{7,11}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s]{6,18}$/, 
-	apellido: /^[a-zA-ZÀ-ÿ\s]{6,20}$/,
-	password: /^.{8,12}$/, 
+	nombre: /^[a-zA-ZÀ-ÿ\s]{8,18}$/, 
+	password: /^.{5,12}$/, 
+	region: /^[a-zA-ZÀ-ÿ\s]{4,11}$/,  
 	telefono: /^.{10,12}$/,
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 
@@ -15,8 +15,8 @@ const expresiones = {
 const campos = {
 	usuario: false,
 	nombre: false,
-	apellido: false,
 	password: false,
+	region: false,
 	telefono: false,
 	correo: false
 	// telefono: false
@@ -31,15 +31,15 @@ const validarFormulario = (e) => {
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
 		break;
-		case "apellido":
-			validarCampo(expresiones.apellido, e.target, 'apellido');
-		break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
 			validarPassword2();
 		break;
 		case "password2":
 			validarPassword2();
+		break;
+		case "region":
+			validarCampo(expresiones.region, e.target, 'region');
 		break;
 		case "telefono":
 			validarCampo(expresiones.telefono, e.target, 'telefono');
@@ -102,17 +102,17 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 		var doc = document.getElementById('usuario').value;
 		var nom = document.getElementById('nombre').value;
-		var ape = document.getElementById('apellido').value;
 		var pas = document.getElementById('password').value;
+		var region= document.getElementById('region').value;
 		var tel = document.getElementById('telefono').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.apellido && campos.password  && campos.telefono  && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.password && campos.region && campos.telefono  && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(ape);console.log(pin);console.log(tel);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, ape: ape, pas: pas, telefono: tel, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(pas);console.log(region);console.log(tel);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, region: region, telefono: tel, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
