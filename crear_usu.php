@@ -43,10 +43,10 @@
             </div>
 
 
-            <div class="formulario__grupo-input" id="grupo__nombre">
-                <label for="nombre" class="formulario__label">Apellidos *</label>
+            <div class="formulario__grupo-input" id="grupo__apellido">
+                <label for="apellido" class="formulario__label">Apellidos *</label>
                     <div class="formulario__grupo-input">
-                        <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Apellidos">
+                        <input type="text" class="formulario__input" onkeyup="mayus(this);" name="apellido" id="apellido" placeholder="Apellidos">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="formulario__input-error">
@@ -54,10 +54,10 @@
             </div>
 
 
-            <div class="formulario__grupo-input" id="grupo__usuario">
-            <label for="usuario" class="formulario__label">Celular*</label>
+            <div class="formulario__grupo-input" id="grupo__celular">
+            <label for="celular" class="formulario__label">Celular*</label>
                 <div class="formulario__grupo-input">
-                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Celular">
+                    <input type="text" class="formulario__input" name="celular" id="celular" placeholder="Celular">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
                 </div>
                 <p class="formulario__input-error">
@@ -130,7 +130,7 @@
             <p class="text-center">
                       
             <div class="formulario__grupo-btn-enviar">
-                <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
+                <button type="submit" class="formulario__btn" class="formulario__btn:hover" name="save" value="guardar" >Enviar</button>
                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
             </div>
 

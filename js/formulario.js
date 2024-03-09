@@ -4,18 +4,20 @@ const inputs = document.querySelectorAll('#formulario input');
 const expresiones = {
 	usuario: /^\d{7,11}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
+	apellido: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-	// telefono: /^\d{7,14}$/ 
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	celular: /^\d{10,12}$/ 
 	
 }
 
 const campos = {
 	usuario: false,
 	nombre: false,
+	apellido: false,
 	password: false,
-	correo: false
-	// telefono: false
+	correo: false,
+	celular: false
 	
 }
 
@@ -27,6 +29,9 @@ const validarFormulario = (e) => {
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
 		break;
+		case "apellido":
+			validarCampo(expresiones.apellido, e.target, 'apellido');
+		break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
 			validarPassword2();
@@ -37,9 +42,9 @@ const validarFormulario = (e) => {
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
 		break;
-		// case "telefono":
-		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
-		// break;
+		case "celular":
+			validarCampo(expresiones.celular, e.target, 'celular');
+		break;
 		
 	}
 }
@@ -92,6 +97,8 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 		var doc = document.getElementById('usuario').value;
 		var nom = document.getElementById('nombre').value;
+		var ape = document.getElementById('apellido').value;
+		var cel = document.getElementById('celular').value;
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
@@ -99,8 +106,8 @@ formulario.addEventListener('submit', (e) => {
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom); console.log(ape);console.log(pas);console.log(cel);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, ape: ape, cel: cel, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
