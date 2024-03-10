@@ -22,4 +22,16 @@
     echo $email;
     echo $tip_usu;
 
+    $sql = "INSERT INTO user (doc, name, apellido, pin, contrasena, email, id_tip_user) 
+    VALUES ('$usu', '$nom', '$ape', '$pin', '$pas', '$email', '$tip_usu')";
+
+    if ($con->query($sql) === TRUE) {
+    echo "Usuario registrado exitosamente";
+    } else {
+    echo "Error al registrar usuario: " . $sql . "<br>" . $con->error;
+    }
+
+
+    $con->close();
+
 ?>

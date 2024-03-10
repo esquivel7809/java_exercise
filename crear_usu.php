@@ -44,7 +44,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            Los nombres del usuario tienen que ser de 10 a 30 dígitos y solo puede contener letras</p>
+                        Los nombres del usuario tienen que ser de 3 a 15 dígitos y solo puede contener letras.</p>
                 </div>
 
                 <!----------------------------------------------- Inicio Campos nuevos ----------------------------------------------->
@@ -57,7 +57,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            Los apellidos del usuario tienen que ser de 10 a 30 dígitos y solo puede contener letras.</p>
+                        Los apellidos del usuario tienen que ser de 3 a 15 dígitos y solo puede contener letras.</p>
                 </div>
 
                 <!-- div para capturar el Pin -->
