@@ -42,7 +42,7 @@ const validarFormulario = (e) => {
 			validarCampo(expresiones.telefono, e.target, 'telefono');
 		break;
 		case "ocupacion":
-			validarCampo(expresiones.ocupacion, e.target, 'ocupacion');
+			validarCampo(expresiones.ocupacion, e.target, 'ocupacion');																																						
 		break;
 		
 	}
