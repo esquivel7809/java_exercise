@@ -44,7 +44,7 @@
 
 
             <div class="formulario__grupo-input" id="grupo__colorfav">
-                <label for="apellido" class="formulario__label">colorfav *</label>
+                <label for="colorfav" class="formulario__label">colorfav *</label>
                     <div class="formulario__grupo-input">
                         <input type="text" class="formulario__input" onkeyup="mayus(this);" name="colorfav" id="colorfav" placeholder="colorfav">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -54,8 +54,8 @@
             </div>
 
 
-            <div class="formulario__grupo-input" id="grupo__celular">
-            <label for="celular" class="formulario__label">Celular_fijo*</label>
+            <div class="formulario__grupo-input" id="grupo__celular_fijo">
+            <label for="celular_fijo" class="formulario__label">Celular_fijo*</label>
                 <div class="formulario__grupo-input">
                     <input type="text" class="formulario__input" name="celular_fijo" id="celular_fijo" placeholder="Celular_fijo">
                     <i class="formulario__validacion-estado fas fa-times-circle"></i>
