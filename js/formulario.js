@@ -3,24 +3,21 @@ const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
 	usuario: /^\d{7,11}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s]{12,40}$/, 
+	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
+	colorfav: /^[a-zA-ZÀ-ÿ\s]{5,15}$/, 
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	descripcion:/^[a-zA-ZÀ-ÿ\s]{10,20}$/,
-	ciudad: /^[a-zA-ZÀ-ÿ\s]{12,40}$/,
-	// telefono: /^\d{7,14}$/ 
+	celular_fijo: /^\d{10,12}$/ 
 	
 }
 
 const campos = {
 	usuario: false,
 	nombre: false,
+	colorfav: false,
 	password: false,
 	correo: false,
-	descripcion: false,
-	ciudad: false
-
-	// telefono: false
+	celular_fijo: false
 	
 }
 
@@ -32,6 +29,9 @@ const validarFormulario = (e) => {
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
 		break;
+		case "colorfav":
+			validarCampo(expresiones.colorfav, e.target, 'colorfav');
+		break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
 			validarPassword2();
@@ -42,15 +42,9 @@ const validarFormulario = (e) => {
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
 		break;
-		case "descripcion":
-			validarCampo(expresiones.descripcion, e.target, 'descripcion');
-			break;
-			case "ciudad":
-				validarCampo(expresiones.ciudad, e.target, 'ciudad');
-
-		// case "telefono":
-		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
-		// break;
+		case "celular_fijo":
+			validarCampo(expresiones.celular_fijo, e.target, 'celular_fijo');
+		break;
 		
 	}
 }
@@ -103,17 +97,17 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 		var doc = document.getElementById('usuario').value;
 		var nom = document.getElementById('nombre').value;
+		var colorfav = document.getElementById('colorfav').value;
+		var celular_fijo = document.getElementById('celular_fijo').value;
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
-		var descripcion = document.getElementById('descripcion').value;
-		var ciudad = document.getElementById('ciudad').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, descripcion:  descripcion, ciudad: ciudad, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom); console.log(colorfav);console.log(pas);console.log(celular_fijo);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, colorfav: colorfav, celular_fijo: celular_fijo, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
