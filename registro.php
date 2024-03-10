@@ -33,11 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "SELECT * FROM user WHERE doc = '$doc'";
     $result = $conn->query($sql);
-
     if ($result->num_rows > 0) {
         echo "El documento ya está registrado. Por favor, intente con otro.";
     } else {
-        $sql_insert = "INSERT INTO user (doc, name, contrasena, email, id_tip_user) VALUES ('$doc', '$nombre', '$password', '$email', '$tip_usu')";
+        $sql_insert = "INSERT INTO user (doc, name, contrasena, email, id_tip_user) 
+        VALUES ('$doc', '$nombre', '$password', '$email', '$tip_usu')";
 
         if ($conn->query($sql_insert) === TRUE) {
             echo "Registro exitoso. Los datos han sido insertados correctamente.";
