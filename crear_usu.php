@@ -3,8 +3,40 @@ require './conexion/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-?>
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "formreg")) {
+    $usuario = $_POST['usuario'];
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $contrasena = $_POST['password'];
+    $password2 = $_POST['password2'];
+    $correo = $_POST['correo'];
+    $direccion = $_POST['direccion'];
+    $id_tip_user = $_POST['id_tip_user'];
 
+    if ($usuario == "" || $nombre == "" || $apellido == "" || $contrasena == "" || $password2 == "" || $correo == "" || $direccion == "") {
+        echo '<script>alert ("EXISTEN CAMPOS VACIOS"); </script>';
+        echo '<script>window.location="crear_usu.php"</script>';
+    } else {
+        try {
+            $sql = $con->prepare("INSERT INTO user(usuario, nombre, apellido, contrasena, password2, correo, direccion, id_tip_user) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql->bindParam(1, $usuario);
+            $sql->bindParam(2, $nombre);
+            $sql->bindParam(3, $apellido);
+            $sql->bindParam(4, $contrasena);
+            $sql->bindParam(5, $password2);
+            $sql->bindParam(6, $correo);
+            $sql->bindParam(7, $direccion);
+            $sql->bindParam(8, $id_tip_user);
+            $sql->execute();
+
+            echo '<script>alert ("Usuario Creado con Exito"); </script>';
+            echo '<script>window.location="crear_usu.php"</script>';
+        } catch (PDOException $e) {
+            echo "Error al insertar datos en la base de datos: " . $e->getMessage();
+        }
+    }
+}
+?>
 
 <!--  -->
 
@@ -110,7 +142,7 @@ $con = $db->conectar();
                         <option value="" selected="">Seleccione Tipo Usuario</option>
                         <?php
                         /*Consulta para mostrar las opciones en el select */
-                        $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use = 1');
+                        $statement = $con->prepare('SELECT * from tip_use WHERE id_tip_use ');
                         $statement->execute();
                         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
                             echo "<option value=" . $row['id_tip_use'] . ">" . $row['tip_use'] . "</option>";
@@ -131,7 +163,7 @@ $con = $db->conectar();
             </div>
 
             <div class="formulario__mensaje" id="formulario__mensaje">
-                <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                <p class="formulario__grupo-incorrecto"><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
             </div>
 
             <p class="text-center">
@@ -139,6 +171,7 @@ $con = $db->conectar();
             <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar">Enviar</button>
                 <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                <input type="hidden" name="MM_insert" value="formreg">
             </div>
 
 
