@@ -31,6 +31,7 @@ $con = $db->conectar();
                                 ?>
                 </select>
         </div>
+        
     <select name="" id="animal">
         <option value=""></option>
 
