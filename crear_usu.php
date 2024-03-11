@@ -86,7 +86,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            La ciudad no coincide.</p>
+                        La ciuidad solo puede contener letras.</p>
                 </div>
                 
                 <div class="formulario__grupo-input" id="grupo__codigo_postal">
@@ -96,7 +96,7 @@
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            El codigo postal no coincide.</p>
+                        El codigo postal tiene que ser de 6 a 10 dígitos y solo puede contener numeros.</p>
                 </div>
 
                 <div class="formulario__grupo-input" id="grupo__telefono">
