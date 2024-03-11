@@ -4,6 +4,7 @@ const inputs = document.querySelectorAll('#formulario input');
 const expresiones = {
 	usuario: /^\d{7,11}$/, 
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
+	eps: /^[a-zA-ZÀ-ÿ\s]{8,40}$/,
 	password: /^.{8,12}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 	// telefono: /^\d{7,14}$/ 
@@ -12,6 +13,7 @@ const expresiones = {
 
 const campos = {
 	usuario: false,
+	eps: false,
 	nombre: false,
 	password: false,
 	correo: false
@@ -26,6 +28,9 @@ const validarFormulario = (e) => {
 		break;
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
+		break;
+		case "eps":
+			validarCampo(expresiones.eps, e.target, 'eps');
 		break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
@@ -91,16 +96,18 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 		var doc = document.getElementById('usuario').value;
+		var eps = document.getElementById('eps').value;
 		var nom = document.getElementById('nombre').value;
 		var pas = document.getElementById('password').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
+		var cuidad = document.getElementById('cuidad').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.eps && campos.password && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(eps);console.log(pas);console.log(email);console.log(tip_usu); console.log(cuidad);
+		$.post ("registro.php?cod=datos",{doc: doc, eps: eps, nom: nom, pas: pas, email: email, tip_usu: tip_usu, cuidad: cuidad,}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
