@@ -139,6 +139,7 @@
             <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
                 <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                <p class="formulario__input-error">Formulario NO enviado, documento ya existente.</p>
             </div>
                 
         

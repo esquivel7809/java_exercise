@@ -26,6 +26,7 @@ $tip_user = $_POST['tip_usu'];
 
 // Prepara la consulta SQL para insertar los datos en la base de datos
 
+<<<<<<< HEAD
 // Prepara la consulta SQL para insertar los datos en la base de datos
 $sql= $con -> prepare ("SELECT * FROM user WHERE doc='$doc'");
 $sql -> execute();
@@ -45,3 +46,28 @@ else {
 ?>
 
 <script src="formulario.js"></script>
+=======
+    $sql= $con -> prepare ("SELECT * FROM user WHERE doc='$doc'");
+     $sql -> execute();
+     $fila = $sql -> fetchAll(PDO::FETCH_ASSOC);
+
+     if ($fila){
+        echo '<script>alert ("ESTE PAQUETE YA EXISTE //CAMBIELO//");</script>';
+        $validacion=0;
+     }
+     else {
+        $cifrado = password_hash($contra,PASSWORD_DEFAULT, array("pass"=>12));
+        
+        $insertSQL = $con->prepare ("INSERT INTO user (doc,name,direccion,edad,contrasena,email,id_tip_user) VALUES ('$doc', '$nombre','$dir', '$edad','$cifrado', '$correo','$tip_user')");
+        $insertSQL -> execute();
+        $validacion=1;
+     }
+
+     ?>
+
+<script src="formulario.js"></script>
+
+
+
+
+>>>>>>> 6bfa4f8f23a11cd54e532a9cf0d656aeb69b41c4
