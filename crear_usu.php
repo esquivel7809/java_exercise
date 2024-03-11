@@ -56,14 +56,14 @@
                             La edad tiene que ser de 1 a 3 dígitos y solo puede contener numeros.</p>
                 </div>
 
-                <div class="formulario__grupo-input" id="grupo__direccion">
-                    <label for="direccion" class="formulario__label">Direccion *</label>
+                <div class="formulario__grupo-input" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Telefono *</label>
                         <div class="formulario__grupo-input">
-                        <input onkeyup="minus(this);" type="direccion" class="formulario__input" name="direccion" id="direccion" placeholder="Direccion">
+                        <input " type="telefono" class="formulario__input" name="telefono" id="telefono" placeholder="telefono">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                        La direccion solo puede contener letras, numeros, puntos, guiones y guion bajo..</p>
+                            el telefono debe contener de 7 a 14 digitos numericos</p>  
                 </div>
 
 
@@ -159,3 +159,4 @@
 
 </html>
 
+?>
