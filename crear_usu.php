@@ -21,14 +21,16 @@
         <form method="POST" autocomplete="off" class="formulario" id="formulario" >
 
             <!-- div para capturar el documento -->
-            <div class="formulario__grupo-input" id="grupo__usuario">
-                <label for="usuario" class="formulario__label">Documento *</label>
+            <div> 
+                <div class="formulario__grupo-input" id="grupo__usuario">
+                    <label for="usuario" class="formulario__label">Documento *</label>
                     <div class="formulario__grupo-input">
                         <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
                     <p class="formulario__input-error">
                         El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                    </div>
             </div>
 
             <!-- div para capturar el nombre -->
