@@ -22,4 +22,7 @@
     echo $email;
     echo $tip_usu;
 
+    $sql = "INSERT INTO user (nitc, nombre, direccion, telefono) VALUES (:nitc, :nombre, :direccion, :telefono)";
+
+
 ?>
