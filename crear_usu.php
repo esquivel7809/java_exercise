@@ -80,14 +80,14 @@
                     <p class="formulario__input-error">El pin tiene que ser de 6 a 8 dígitos Alfanumericos.</p>
                 </div>
 
-                <!-- Grupo: telefono -->
-                <div class="formulario__grupo-input"  id="grupo__telefono">
-                    <label for="telefono" class="formulario__label">Telefono *</label>
+                <!-- Grupo: direccion -->
+                <div class="formulario__grupo-input"  id="grupo__direccion">
+                    <label for="direccion" class="formulario__label">Direccion *</label>
                     <div class="formulario__grupo-input">
-                        <input  onkeyup="minus(this);" type="number" class="formulario__input" name="telefono" id="telefono" placeholder="Telefono">
+                        <input  onkeyup="minus(this);" type="text" class="formulario__input" name="direccion" id="direccion" placeholder="direccion">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">El telefono tiene que ser de 10 a 12 dígitos Alfanumericos.</p>
+                    <p class="formulario__input-error">La direccion tiene que ser de 10 a 12 dígitos.</p>
                 </div>
 
                 <!-- Grupo: Correo Electronico -->

@@ -6,7 +6,7 @@ const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
 	pin: /^.{6,8}$/,
-	telefono: /^.{10,12}$/,
+	direccion: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 
 	
@@ -17,7 +17,7 @@ const campos = {
 	nombre: false,
 	password: false,
 	pin: false,
-	telefono: false,
+	direccion: false,
 	correo: false
 	// telefono: false
 	
@@ -41,8 +41,8 @@ const validarFormulario = (e) => {
 		case "pin":
 			validarCampo(expresiones.pin, e.target, 'pin');
 		break;
-		case "telefono":
-			validarCampo(expresiones.telefono, e.target, 'telefono');
+		case "direccion":
+			validarCampo(expresiones.direccion, e.target, 'direccion');
 		break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
@@ -104,15 +104,15 @@ formulario.addEventListener('submit', (e) => {
 		var nom = document.getElementById('nombre').value;
 		var pas = document.getElementById('password').value;
 		var pin = document.getElementById('pin').value;
-		var tel = document.getElementById('telefono').value;
+		var dic = document.getElementById('direccion').value;
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.pin && campos.telefono  && campos.correo  && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.password && campos.pin && campos.direccion  && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(pin);console.log(tel);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, pin: pin, telefono: tel, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(pas);console.log(pin);console.log(dic);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, pin: pin, direccion: dic, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
