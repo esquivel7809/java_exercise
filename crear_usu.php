@@ -7,7 +7,6 @@
 
 
 <!-- -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,14 +25,14 @@
 
                 <!-- div para capturar el documento -->
 
-                <div class="formulario__grupo-input" id="grupo__usuario">
-                    <label for="usuario" class="formulario__label">Documento *</label>
+                <div class="formulario__grupo-input" id="grupo__documento">
+                    <label for="documento" class="formulario__label">Documento *</label>
                         <div class="">
-                            <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="Documento">
+                            <input type="text" class="formulario__input" name="doc" id="documento" placeholder="Documento">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            El documento tiene que ser de 6 a 11 dígitos y solo puede contener numeros.</p>
+                            El documento tiene que ser de 6 a 11 dígitos y solo puede contener números.</p>
                 </div>
 
                 <!-- div para capturar el nombre -->
@@ -41,11 +40,11 @@
                 <div class="formulario__grupo-input" id="grupo__nombre">
                     <label for="nombre" class="formulario__label">Nombres *</label>
                         <div class="">
-                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nombre" id="nombre" placeholder="Nombres">
+                            <input type="text" class="formulario__input" onkeyup="mayus(this);" name="nom" id="nombre" placeholder="Nombres">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            El usuario tiene que ser de 12 a 40 dígitos y solo puede contener letras</p>
+                            El nombre tiene que ser de 12 a 40 dígitos y solo puede contener letras.</p>
                 </div>
 
                 <!-- Grupo: Contraseña -->
@@ -55,12 +54,12 @@
                         <input onkeyup="minus(this);" type="password" class="formulario__input" name="password" id="password">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos Alfanumericos.</p>
+                    <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos alfanuméricos.</p>
                 </div>
 
                 <!-- Grupo: Contraseña 2 -->
                 <div class="formulario__grupo-input" id="grupo__password2">
-                    <label for="password2" class="formulario__label">Contraseña *</label>
+                    <label for="password2" class="formulario__label">Confirmar Contraseña *</label>
                     <div class="formulario__grupo-input">
                         <input type="password" class="formulario__input" name="password2" id="password2">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
@@ -69,39 +68,39 @@
                 </div>
        
 
-                <!-- Grupo: Correo Electronico -->
+                <!-- Grupo: Correo Electrónico -->
                 <div class="formulario__grupo-input" id="grupo__correo">
                     <label for="correo" class="formulario__label">Correo Electrónico *</label>
                     <div class="formulario__grupo-input">
-                        <input onkeyup="minus(this);" type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                        <input onkeyup="minus(this);" type="email" class="formulario__input" name="email" id="correo" placeholder="correo@correo.com">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                    <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
                 </div>
 
                 <div class="formulario__grupo-input"  id="grupo__telefono">
-                    <label for="telefono" class="formulario__label">Telefono *</label>
+                    <label for="telefono" class="formulario__label">Teléfono *</label>
                     <div class="formulario__grupo-input">
-                        <input  onkeyup="minus(this);" type="number" class="formulario__input" name="telefono" id="telefono" placeholder="Telefono">
+                        <input  onkeyup="minus(this);" type="number" class="formulario__input" name="telefono" id="telefono" placeholder="Teléfono">
                         <i class="formulario__validacion-estado fas fa-times-circle"></i>
                     </div>
-                    <p class="formulario__input-error">El telefono tiene que ser de 10 a 12 dígitos Alfanumericos.</p>
+                    <p class="formulario__input-error">El teléfono tiene que ser de 10 a 12 dígitos alfanuméricos.</p>
                 </div>
                
                 <div class="formulario__grupo-input" id="grupo__direccion">
-                    <label for="direccion" class="formulario__label">direccion *</label>
+                    <label for="direccion" class="formulario__label">Dirección *</label>
                         <div class="formulario__grupo-input">
-                            <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="direccion">
+                            <input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="Dirección">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">
-                            La direccion debe tener numeros y letras.</p>
+                            La dirección debe tener números y letras.</p>
                 </div>
 
-                <div class="formulario__grupo-input" id="grupo__telefono">
+                <div class="formulario__grupo-input" id="grupo__id_tip_use">
                     <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
                     <div class="">                
-                        <select name="id_tip_use" id="id_tip_use" class="formulario__select" required>
+                        <select name="tip_usu" id="id_tip_use" class="formulario__select" required>
                             <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                                 <?php
                                    /*Consulta para mostrar las opciones en el select */
@@ -120,7 +119,7 @@
    <div class="formulario__checkbox" id="grupo__terminos">
     <label class="formulario__checkbox">
      <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-     Acepto los Terminos y Condiciones
+     Acepto los Términos y Condiciones
     </label>
    </div>
 
@@ -132,28 +131,8 @@
                      
             <div class="formulario__grupo-btn-enviar">
                 <button type="submit" class="formulario__btn" name="save" value="guardar" >Enviar</button>
-                <p class="formulario__mensaje" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                <p class="formulario__mensaje" id="formulario__mensaje-exito">¡Formulario enviado exitosamente!</p>
             </div>
                
        
         </form>
-   </main>
-   <script src="js/jquery.js"></script>
-   <script src="js/formulario.js"></script>
- <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-
-    <!-- Javascript funcion para convertor en mayusculas y minusculas -->
-    <!-- <script src="../js/main.js"></script> -->
-    <script>
-        function mayus(e) {
-        e.value = e.value.toUpperCase();
-        }
-
-        function minus(e) {
-        e.value = e.value.toLowerCase();
-        }
-    </script>
- 
-</body>
-
-</html>
