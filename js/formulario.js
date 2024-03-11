@@ -2,30 +2,34 @@ const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 
 const expresiones = {
-	usuario: /^\d{7,11}$/, 
-	nombre: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
+	doc: /^\d{7,11}$/, 
+	name: /^[a-zA-ZÀ-ÿ\s]{15,40}$/, 
 	password: /^.{8,12}$/, 
-	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
-	// telefono: /^\d{7,14}$/ 
+	email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	edad: /^\d{1,2}$/, 
+	direccion: /^[a-zA-ZÀ-ÿ\s]{10,40}$/ 
+	
 	
 }
 
 const campos = {
-	usuario: false,
-	nombre: false,
+	doc: false,
+	name: false,
 	password: false,
-	correo: false
-	// telefono: false
+	email: false,
+	edad: false,
+	direccion: false
+
 	
 }
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
-		case "usuario":
-			validarCampo(expresiones.usuario, e.target, 'usuario');
+		case "doc":
+			validarCampo(expresiones.doc, e.target, 'doc');
 		break;
-		case "nombre":
-			validarCampo(expresiones.nombre, e.target, 'nombre');
+		case "name":
+			validarCampo(expresiones.name, e.target, 'name');
 		break;
 		case "password":
 			validarCampo(expresiones.password, e.target, 'password');
@@ -34,12 +38,15 @@ const validarFormulario = (e) => {
 		case "password2":
 			validarPassword2();
 		break;
-		case "correo":
-			validarCampo(expresiones.correo, e.target, 'correo');
+		case "email":
+			validarCampo(expresiones.email, e.target, 'email');
 		break;
-		// case "telefono":
-		// 	validarCampo(expresiones.telefono, e.target, 'telefono');
-		// break;
+		case "edad":
+			validarCampo(expresiones.edad, e.target, 'edad');
+		break;
+		case "direccion":
+			validarCampo(expresiones.direccion, e.target, 'direccion');
+		break;
 		
 	}
 }
@@ -90,17 +97,19 @@ inputs.forEach((input) => {
 
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
-		var doc = document.getElementById('usuario').value;
-		var nom = document.getElementById('nombre').value;
-		var pas = document.getElementById('password').value;
-		var email = document.getElementById('correo').value;
+		var doc = document.getElementById('doc').value;
+		var name = document.getElementById('name').value;
+		var password = document.getElementById('password').value;
+		var email = document.getElementById('email').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
+		var edad = document.getElementById('edad').value;
+		var direccion= document.getElementById('direccion').value;
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo  && terminos.checked ){
+	if(campos.doc && campos.nombre && campos.password && campos.email  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(password);console.log(email);console.log(edad);console.log(direccion);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, password: pas, email: email, edad: edad, direccion: direccion, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		
