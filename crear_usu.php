@@ -10,7 +10,7 @@
 
 <!--  -->
 
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -24,25 +24,25 @@
 	<main>
 		<form action="" class="formulario" id="formulario">
 			<!-- Grupo: Usuario -->
-			<div class="formulario__grupo" id="grupo__usuario">
-				<label for="documento" class="formulario__label">Documento</label>
+			<div class="formulario__grupo" id="grupo__doc">
+				<label for="doc" class="formulario__label">Documento</label>
 				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="documento" id="documento" placeholder="documento">
+					<input type="text" class="formulario__input" name="doc" id="doc" placeholder="doc">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">
-					El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+					El usuario tiene que ser de 10 digitos.</p>
 			</div>
 
-			<!-- Grupo: Nombre -->
-			<div class="formulario__grupo" id="grupo__nombre">
-				<label for="nombre" class="formulario__label">Nombre</label>
+			<!-- Grupo: name -->
+			<div class="formulario__grupo" id="grupo__name">
+				<label for="name" class="formulario__label">Nombre</label>
 				<div class="formulario__grupo-input">
-					<input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="John Doe">
+					<input type="text" class="formulario__input" name="name" id="name" placeholder="John Doe">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
 				<p class="formulario__input-error">
-					El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+					El usuario tiene que ser de 4 a 10 dígitos y solo puede contener numeros, letras y guion bajo.</p>
 			</div>
 
 			<!-- Grupo: Contraseña -->
@@ -52,7 +52,7 @@
 					<input type="password" class="formulario__input" name="password" id="password">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+				<p class="formulario__input-error">La contraseña tiene que ser de 4 a 7 dígitos.</p>
 			</div>
 
 			<!-- Grupo: Contraseña 2 -->
@@ -66,13 +66,13 @@
 			</div>
 
 			<!-- Grupo: Correo Electronico -->
-			<div class="formulario__grupo" id="grupo__correo">
-				<label for="correo" class="formulario__label">Correo Electrónico</label>
+			<div class="formulario__grupo" id="grupo__email">
+				<label for="email" class="formulario__label">Correo Electrónico</label>
 				<div class="formulario__grupo-input">
-					<input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+					<input type="email" class="formulario__input" name="email" id="email" placeholder="email@email.com">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+				<p class="formulario__input-error">El email solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
 			</div>
 
             <select  name="id_tip_use" id="id_tip_use" class="" required>
@@ -103,7 +103,7 @@
 					<input type="text" class="formulario__input" name="direccion" id="direccion" placeholder="direccion">
 					<i class="formulario__validacion-estado fas fa-times-circle"></i>
 				</div>
-				<p class="formulario__input-error">Direccion .</p>
+				<p class="formulario__input-error">Direccion solo puede contener letras, numeros 10 a 15 digitos.</p>
 			</div>
 
 			<!-- Grupo: Terminos y Condiciones -->
@@ -118,10 +118,10 @@
 				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
 			</div>
 
-			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="formulario__btn">Enviar</button>
-				<p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-			</div>
+			<div class="formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn" class="formulario__btn:hover" name="save" value="guardar" >Enviar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+            </div>
 		</form>
 	</main>
 
