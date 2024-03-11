@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-03-2024 a las 02:51:09
+-- Tiempo de generación: 11-03-2024 a las 17:45:54
 -- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Versión de PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,6 +66,27 @@ INSERT INTO `competencia` (`id_compe`, `competencia`, `id_transv`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `deportes`
+--
+
+CREATE TABLE `deportes` (
+  `id_depor` int(11) NOT NULL,
+  `deporte` varchar(30) NOT NULL,
+  `id_tip_depor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `deportes`
+--
+
+INSERT INTO `deportes` (`id_depor`, `deporte`, `id_tip_depor`) VALUES
+(1, 'boxeo', 1),
+(2, 'futbol', 2),
+(3, 'boleybol', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `fichas`
 --
 
@@ -76,6 +97,25 @@ CREATE TABLE `fichas` (
   `id_compet` int(11) NOT NULL,
   `id_hora` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipo_depor`
+--
+
+CREATE TABLE `tipo_depor` (
+  `id_tip_depor` int(11) NOT NULL,
+  `tipo_depor` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tipo_depor`
+--
+
+INSERT INTO `tipo_depor` (`id_tip_depor`, `tipo_depor`) VALUES
+(1, 'contacto'),
+(2, 'balon');
 
 -- --------------------------------------------------------
 
@@ -164,10 +204,22 @@ ALTER TABLE `competencia`
   ADD PRIMARY KEY (`id_compe`);
 
 --
+-- Indices de la tabla `deportes`
+--
+ALTER TABLE `deportes`
+  ADD PRIMARY KEY (`id_depor`);
+
+--
 -- Indices de la tabla `fichas`
 --
 ALTER TABLE `fichas`
   ADD PRIMARY KEY (`ficha`);
+
+--
+-- Indices de la tabla `tipo_depor`
+--
+ALTER TABLE `tipo_depor`
+  ADD PRIMARY KEY (`id_tip_depor`);
 
 --
 -- Indices de la tabla `tip_use`
@@ -202,6 +254,18 @@ ALTER TABLE `asig_transv`
 --
 ALTER TABLE `competencia`
   MODIFY `id_compe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `deportes`
+--
+ALTER TABLE `deportes`
+  MODIFY `id_depor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `tipo_depor`
+--
+ALTER TABLE `tipo_depor`
+  MODIFY `id_tip_depor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tip_use`
