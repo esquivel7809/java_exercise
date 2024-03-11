@@ -102,6 +102,11 @@ formulario.addEventListener('submit', (e) => {
 		var email = document.getElementById('correo').value;
 		var tip_usu = document.getElementById('id_tip_use').value;
 		var cuidad = document.getElementById('cuidad').value;
+<<<<<<< HEAD
+=======
+		var validar = "<?php echo $validar; >?";
+		console.log(validar);
+>>>>>>> 4486c7d5bd86023e16f48a6027a742162d2c3582
 
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.eps && campos.password && campos.correo  && terminos.checked ){
@@ -115,6 +120,14 @@ formulario.addEventListener('submit', (e) => {
 		setTimeout(() => {
 			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
 		}, 5000);
+
+		if(validar ==1){
+			alert ("Registro exitoso")
+		}
+
+		else{
+			alert("Usuario ya existente");
+		}
 
 		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
 			icono.classList.remove('formulario__grupo-correcto');

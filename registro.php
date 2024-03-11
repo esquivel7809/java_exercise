@@ -3,8 +3,8 @@
     $db = new Database();
     $con = $db->conectar();
 
+<<<<<<< HEAD
 ?>
-
 <?php
 
     $usu = $_POST['doc'];
@@ -28,3 +28,34 @@
 
     
 ?>
+=======
+    $validar = 0;
+
+    $doc = $_POST['doc'];
+    $nom = $_POST['nom'];
+    $eps = $_POST['eps'];
+    $pas = $_POST['pas']; 
+    $email = $_POST['email'];
+    $cuidad = $_POST['cuidad'];
+    $tip_usu = $_POST['tip_usu']; 
+
+    // Prepara la consulta SQL para insertar los datos en la base de datos
+    $sql = $con->prepare("SELECT * FROM user WHERE doc");
+    $sql->execute();
+    $fila = $sql->fetch(PDO::FETCH_ASSOC);
+
+    if ($fila) {
+        echo '<script>alert("Este usuario ya existe. Por favor cámbielo.");</script>';
+        $validar = 0;
+    } else {
+        $cifrado = password_hash($pas, PASSWORD_DEFAULT, array("pass" => 12)); // contraseña incriptada
+
+        $insertSQL = $con->prepare("INSERT INTO user (doc, name, contrasena, email, id_tip_user, eps, cuidad) VALUES (:doc, :nom, :cifrado, :email, :tip_usu, :eps, :cuidad)");
+        $insertSQL->execute(array(':doc' => $doc, ':nom' => $nom, ':cifrado' => $cifrado, ':email' => $email, ':tip_usu' => $tip_usu, ':eps' => $eps, ':cuidad' => $cuidad));
+        $validar = 1;
+    
+    }
+?>
+
+<script src="formulario.js"></script>
+>>>>>>> 4486c7d5bd86023e16f48a6027a742162d2c3582
