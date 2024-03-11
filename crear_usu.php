@@ -98,6 +98,16 @@ $con = $db->conectar();
 
             </div>
 
+            <option value="" selected="">Seleccione Tipo Usuario</option>
+            <?php
+                        /*Consulta para mostrar las opciones en el select */
+                        $statement = $con->prepare('SELECT * from transversal');
+                        $statement->execute();
+                        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+                            echo "<option value=" . $row['id_transv'] . ">" . $row['transversal'] . "</option>";
+                        }
+                        ?>
+
             <div class="formulario__grupo-input" id="grupo__telefono">
                 <label for="id_genero" class="formulario__label">Tipo Usuario *</label>
                 <div id="formulario__grupo-select">
