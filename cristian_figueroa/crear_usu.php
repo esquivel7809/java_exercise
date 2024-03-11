@@ -104,7 +104,7 @@ $con = $db->conectar();
             <div class="formulario__grupo-input" id="grupo__telefono">
                 <label for="id_tip_use" class="formulario__label">Tipo Usuario *</label>
                 <div class="">
-                    <select name="id_tip_use" id="id_tip_use" class="formulario__select" required>
+                    <select name="tip_usu" id="id_tip_use" class="formulario__select" required>
                         <!-- <option value="" selected="">** Seleccione Tipo Usuario **</option> -->
                         <?php
                         /*Consulta para mostrar las opciones en el select */
