@@ -111,8 +111,8 @@ formulario.addEventListener('submit', (e) => {
 	const terminos = document.getElementById('terminos');
 	if(campos.usuario && campos.nombre && campos.password && campos.region && campos.telefono  && campos.correo  && terminos.checked ){
 		formulario.reset();
-		console.log(doc);console.log(nom);console.log(pas);console.log(region);console.log(tel);console.log(email);console.log(tip_usu);
-		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, region: region, telefono: tel, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
+		console.log(doc);console.log(nom);console.log(pas);console.log(region);console.log(telefono);console.log(email);console.log(tip_usu);
+		$.post ("registro.php?cod=datos",{doc: doc, nom: nom, pas: pas, region: reg, telefono: tel, email: email, tip_usu: tip_usu}, function(document){$("#mensaje").html(document);
 		
 		}),
 		

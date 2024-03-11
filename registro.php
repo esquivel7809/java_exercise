@@ -8,9 +8,9 @@ $usu = $_POST['doc'];
 $nom = $_POST['nom'];
 $pas = $_POST['pas'];
 $email = $_POST['email'];
-$reg = $_POST['reg'];
-$tel = $_POST['tel'];
-$tip_usu = $_POST['tip_usu'];
+$reg = $_POST['region'];
+$tel = $_POST['telefono'];
+$tip_usu = $_POST['tip_usu'];   
 
 
 // Consulta SQL para insertar los datos en la tabla 'user'
