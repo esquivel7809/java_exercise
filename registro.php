@@ -3,7 +3,6 @@
     $db = new Database();
     $con = $db->conectar();
 
-<<<<<<< HEAD
 ?>
 <?php
 
@@ -58,4 +57,3 @@
 ?>
 
 <script src="formulario.js"></script>
->>>>>>> 4486c7d5bd86023e16f48a6027a742162d2c3582
