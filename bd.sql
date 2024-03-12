@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-03-2024 a las 17:28:05
+-- Tiempo de generación: 11-03-2024 a las 17:46:25
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -88,6 +88,27 @@ INSERT INTO `competencia` (`id_compe`, `competencia`, `id_transv`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `deporte`
+--
+
+CREATE TABLE `deporte` (
+  `id_deporte` int(11) NOT NULL,
+  `depor` varchar(30) NOT NULL,
+  `id_tip_dep` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `deporte`
+--
+
+INSERT INTO `deporte` (`id_deporte`, `depor`, `id_tip_dep`) VALUES
+(1, 'Futbol', 1),
+(2, 'Baloncesto', 1),
+(3, 'Boxeo', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `fichas`
 --
 
@@ -118,6 +139,25 @@ INSERT INTO `genero` (`id_genero`, `genero`) VALUES
 (1, 'Masculino'),
 (2, 'Femenino'),
 (3, 'Otro');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipo_deporte`
+--
+
+CREATE TABLE `tipo_deporte` (
+  `id_tip_dep` int(11) NOT NULL,
+  `deporte` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `tipo_deporte`
+--
+
+INSERT INTO `tipo_deporte` (`id_tip_dep`, `deporte`) VALUES
+(1, 'balon'),
+(2, 'contacto');
 
 -- --------------------------------------------------------
 
@@ -210,6 +250,12 @@ ALTER TABLE `competencia`
   ADD PRIMARY KEY (`id_compe`);
 
 --
+-- Indices de la tabla `deporte`
+--
+ALTER TABLE `deporte`
+  ADD PRIMARY KEY (`id_deporte`);
+
+--
 -- Indices de la tabla `fichas`
 --
 ALTER TABLE `fichas`
@@ -220,6 +266,12 @@ ALTER TABLE `fichas`
 --
 ALTER TABLE `genero`
   ADD PRIMARY KEY (`id_genero`);
+
+--
+-- Indices de la tabla `tipo_deporte`
+--
+ALTER TABLE `tipo_deporte`
+  ADD PRIMARY KEY (`id_tip_dep`);
 
 --
 -- Indices de la tabla `tip_use`
@@ -262,10 +314,22 @@ ALTER TABLE `competencia`
   MODIFY `id_compe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `deporte`
+--
+ALTER TABLE `deporte`
+  MODIFY `id_deporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
   MODIFY `id_genero` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `tipo_deporte`
+--
+ALTER TABLE `tipo_deporte`
+  MODIFY `id_tip_dep` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tip_use`
