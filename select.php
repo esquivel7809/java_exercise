@@ -24,9 +24,9 @@ $con = $db->conectar();
 
         <div class="formulario__grupo-input" id="grupo__deporte">
             <label for="id_tip_dep" class="formulario__label">Tipo de Deporte *</label>
-            <div id="formulario__grupo-select">
+            <div class="formulario__grupo-select">
                 <select name="id_tip_dep" id="id_tip_dep" class="formulario__select" required>
-                    <option value="" selected="">Seleccione el Tipo_deporte</option>
+                    <option value="">Seleccione el Tipo_deporte</option>
                     <?php
                     /*Consulta para mostrar las opciones en el select */
                     $statement = $con->prepare('SELECT * from tipo_deporte');
@@ -37,7 +37,7 @@ $con = $db->conectar();
                     ?>
                 </select>
             </div>
-            <div class="formulario__grupo-input" id="select_lista">
+            <div class="formulario__grupo-input" id="select2lista">
                 <label for="depor" class="formulario__label">Deporte *</label>
                 <select name="id_deporte" id="id_deporte" class="formulario__select" required>
                 </select>
@@ -53,7 +53,7 @@ $con = $db->conectar();
             $('#id_tip_dep').change(function(){
                 recargarLista();
             });
-        });
+        })
     </script>
 
     <script type="text/javascript">
@@ -61,7 +61,7 @@ $con = $db->conectar();
             $.ajax({
                 type:"POST",
                 url:"datos.php",
-                data:"id_deporte=" + $('#id_tip_dep').val(),
+                data:"id_tip_dep=" + $('#id_tip_dep').val(),
                 success:function(r){
                     $('#id_deporte').html(r);
                 }
